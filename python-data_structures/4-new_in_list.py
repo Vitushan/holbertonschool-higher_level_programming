@@ -9,5 +9,5 @@ def new_in_list(my_list, idx, element):
     my_cpylist = my_list[:]
     my_cpylist[idx] = element
     return (my_cpylist)
-if idx < 0 or idx >= len(my_list):
-    return (my_list[:])
+    if idx < 0 or idx >= len(my_list):
+     return (my_list[:])
