@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    print (int)(matrix)
+    for i in matrix:
+        print(matrix[i])
