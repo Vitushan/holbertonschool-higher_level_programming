@@ -3,5 +3,5 @@ def element_at(my_list, idx):
     if idx < 0:
         return None
 
-    if idx >= my_list:
+    if idx >= element_at:
         return None
