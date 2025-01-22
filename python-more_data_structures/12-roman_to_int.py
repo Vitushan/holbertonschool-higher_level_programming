@@ -18,7 +18,8 @@ def roman_to_int(roman_string):
         current_value = romane_value.get(roman_string[i])
         if current_value is None:
             return 0
-        if i + 1 < len(roman_string) and romane_value[roman_string[i + 1]] > current_value:
+        if i + 1 < len(roman_string) \
+           and romane_value[roman_string[i + 1]] > current_value:
             total -= current_value
         else:
             total += current_value
