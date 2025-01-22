@@ -2,6 +2,22 @@
 def roman_to_int(roman_string):
     if not roman_string or not isinstance(roman_string, str):
         return 0
+
+
 romane_value = {
-    "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
 }
+total = 0
+for i in range(len(roman_string)):
+        current_value = romane_value[roman_string[i]]
+        if + 1 < len(roman_string) and romane_value[roman_string[i + 1]] > current_value:
+            total -= current_value
+        else:
+            total += current_value
+return total
