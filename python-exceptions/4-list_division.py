@@ -3,13 +3,16 @@ def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     for i in range(list_length):
         try:
-            result = my_list_1[i] / my_list_[2]
+            result = my_list_1[i] / my_list_1[i]
         except ZeroDivisionError:
-            if result == 0:
-        raise:
-            print("wrong type")    
+            result = 0
+            print("division by 0")
+        except TypeError:
+             result = 0
+             print("wrong type")
+        except IndexError:
+             result = 0
+             print("out of range")
         finally:
-            if i < len(my_list_1) or i > len(my_list_2)
-            print("out of range")
+               new_list.append(result)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
         return new_list
-    
