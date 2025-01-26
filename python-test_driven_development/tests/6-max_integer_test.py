@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import unittest
-from 6-max_integer import max_integer  # Assure-toi que cette ligne correspond au chemin du fichier contenant ta fonction
+from 6-max_integer import max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """Unittest pour la fonction max_integer"""
