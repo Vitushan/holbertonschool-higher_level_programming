@@ -2,23 +2,16 @@
 """
 Module to divide all elements of a matrix by a given divisor.
 """
-
-
 def matrix_divided(matrix, div):
     """
-    Divides all elements of a matrix by div.
-
-    Args:
-        matrix (list of lists): Matrix of integers/floats.
-        div (int or float): Divisor.
-
-    Returns:
-        list of lists: New matrix with elements divided by div.
-
+    Divides all elements of a matrix by the divisor.
+    Args:matrix (list of lists): Matrix of integers/floats.
+    div (int or float): Divisor.
+    Returns:list of lists: New matrix with each element divided by div.
     Raises:
-        TypeError: If matrix is not a list of lists of integers/floats, 
-                   rows are not the same size, or div is not a number.
-        ZeroDivisionError: If div is zero.
+    TypeError: If matrix is not a list of lists of integers/floats, 
+    rows are not the same size, or div is not a number.
+    ZeroDivisionError: If div is zero.
     """
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
