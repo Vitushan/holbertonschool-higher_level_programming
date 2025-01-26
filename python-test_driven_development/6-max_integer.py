@@ -1,17 +1,24 @@
 #!/usr/bin/python3
+"""
+Module 6-max_integer
+Cette fonction retourne le maximum d'une liste.
+"""
+
 def max_integer(list=[]):
     """
-    Function that finds and returns the maximum integer in a list of integers.
-    If the list is empty, the function returns None.
+    Trouve et retourne le maximum d'une liste.
+
+    Paramètres :
+    list : liste d'entiers ou flottants (facultatif).
+
+    Retourne :
+    - Le maximum de la liste.
+    - None si la liste est vide.
     """
     if len(list) == 0:
         return None
-
-    result = list[0]
-    i = 1
-
-    while i < len(list):
-        if list[i] > result:
-            result = list[i]
-        i += 1
-    return result
+    max_value = list[0]
+    for num in list:
+        if num > max_value:
+            max_value = num
+    return max_value
