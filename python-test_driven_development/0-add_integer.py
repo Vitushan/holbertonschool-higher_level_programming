@@ -16,8 +16,6 @@ def add_integer(a, b=98):
         int: The sum of a and b as integers.
     Raises:
         TypeError: If a or b is not an integer or float.
-        OverflowError: If a or b is infinty.
-        ValError: If a or b is NaN.
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
