@@ -3,8 +3,6 @@
 Module 0-add_integer
 This module provides the function `add_integer` that adds two integers.
 """
-
-
 def add_integer(a, b=98):
     """
     Adds two integers or floats, returning an integer result.
