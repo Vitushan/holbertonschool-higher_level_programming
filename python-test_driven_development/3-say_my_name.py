@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-
 def say_my_name(first_name, last_name=""):
     """
     Prints a greeting with the full name.
-    
     Args:
         first_name (str): The first name.
-        last_name (str): The last name (optional).
-        
+        last_name (str): The last name (optional).    
     Raises:
         TypeError: If either first_name or last_name is not a string.
     """
