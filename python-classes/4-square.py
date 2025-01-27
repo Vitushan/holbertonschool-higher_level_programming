@@ -4,6 +4,7 @@
 This is a module of square class based on previous task.
 """
 
+
 class Square:
 
     """
@@ -20,6 +21,7 @@ class Square:
         Validates that size is an integer and >= 0.
         '''
         self.size = size
+
     @property
     def size(self):
         """
