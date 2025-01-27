@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-shebang 
+thi is a shebang for interpret python3 
 """
 class square:
     """
