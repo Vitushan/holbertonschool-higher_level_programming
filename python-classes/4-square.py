@@ -8,11 +8,12 @@ This is a module of square class based on previous task.
 class Square:
 
     """
-    This class defines a quare with:
+    This class defines a square with:
     -private instance attribute: __size
     -property to get the size with getter
-    -propery setter to set the size
+    -property setter to set the size
     -method to calculate the area of th square
+    -method for print the square using # character
     """
 
     def __init__(self, size=0):
@@ -49,3 +50,16 @@ class Square:
         Returns: the current area of the square (size ** 2).
         """
         return self.__size ** 2
+
+    def my_print(self):
+        """
+        Public method for print the square.
+        print the square using the # character.
+        if size is 0, print and empty line.
+        """
+
+    if self.__size == 0:
+        print()
+    else:
+        for _ in range(self.__size):
+            print("#" * self.__size)
