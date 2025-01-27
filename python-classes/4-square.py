@@ -45,7 +45,7 @@ class Square:
 
     def area(self):
         """
-        Public method to calculatethe area of the squarz.
+        Public method to calculate the area of the square.
         Returns: the current area of the square (size ** 2).
         """
         return self.__size ** 2
