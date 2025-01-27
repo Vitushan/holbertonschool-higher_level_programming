@@ -4,6 +4,7 @@
 This is a module of square class based on previous task.
 """
 
+
 class Square:
     """
     This class defines a square with:
@@ -27,7 +28,7 @@ class Square:
         Returns the private attribute __size.
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
