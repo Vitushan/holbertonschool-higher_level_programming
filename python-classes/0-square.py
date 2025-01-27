@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-"""
-thi is a shebang for interpret python3 
-"""
-class square:
+class Square:
     """
-    this is a class square
+    this is a square
     """
     pass
