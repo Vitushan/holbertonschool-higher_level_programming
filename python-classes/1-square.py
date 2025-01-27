@@ -3,6 +3,7 @@
 This is a module of square class based on last task.
 """
 
+
 class Square:
     """
     Private instance attribute: size.
