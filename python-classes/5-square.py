@@ -49,14 +49,14 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-          
+
         """
         Public method to print the square.
         Prints the square using the '#' character.
         If size is 0, print an empty line.
         """
-    if self.__size == 0:
-        print()
-    else:
-        for _in range(self.__size):
-            print("#" * self.__size)
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
