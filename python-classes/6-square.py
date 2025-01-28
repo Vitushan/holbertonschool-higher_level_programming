@@ -53,8 +53,8 @@ class Square:
         Setter for the position attribute.
         Returns the private attribute __position.
         """
-    if not isinstance(position, tuple) or len(position) != 2 or not all(
-            isinstance(i, int) and i >= 0 for i in position):
+        if not isinstance(value, tuple): #or len(position) != 2 or not all(
+            #isinstance(i, int) and i >= 0 for i in position):
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
             self.__position = position
