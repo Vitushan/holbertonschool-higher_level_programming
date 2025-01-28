@@ -8,5 +8,4 @@ class Rectangle
 """
 defined empty class a rectangle
 """
-
 pass
