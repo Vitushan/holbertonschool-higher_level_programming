@@ -77,7 +77,8 @@ class Rectangle:
         if width or height is zero return empty string
         """
         if self.__width == 0 or self.__height == 0:
-            rectangle = []
-            for _ in range(self.__height):
-                rectangle.append("#" * self.__width)
-            return rectangle
+            return ""
+        rectangle = []
+        for _ in range(self.__height):
+            rectangle.append("#" * self.__width)
+        return "\n".join(rectangle)
