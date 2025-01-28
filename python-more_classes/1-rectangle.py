@@ -4,7 +4,7 @@
 this is a module for defining a rectangle class
 """
 
-class rectangle:
+class Rectangle:
 
     """
     A class to represent a rectangle
@@ -14,7 +14,7 @@ class rectangle:
         Initialize a rectangle with optional width and height.
         Validations are performed for the parameters
         """
-        self.__width = width
+        self.width = width
         self.height = height
         
 
@@ -23,6 +23,7 @@ class rectangle:
         """
         Getter for width
         """
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -33,7 +34,7 @@ class rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value > 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
