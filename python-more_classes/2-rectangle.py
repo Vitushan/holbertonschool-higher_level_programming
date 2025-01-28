@@ -24,7 +24,6 @@ class Rectangle:
         """
         return self.__width
 
-
     @width.setter
     def width(self, value):
         """
@@ -38,14 +37,12 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-
     @property
     def height(self):
         """
         Getter for height
         """
         return self.__height
-
 
     @height.setter
     def height(self, value):
@@ -60,14 +57,12 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def area(self):
         """
         Public method to calculate the area of the square
         Returns the rectangle area
         """
         return self.__width * self.__height
-
 
     def perimeter(self):
         """
