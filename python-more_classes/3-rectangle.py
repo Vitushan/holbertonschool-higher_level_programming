@@ -4,6 +4,7 @@
 this is a module for defining a rectangle class
 """
 
+
 class Rectangle:
     """
     A class to represent rectangle
@@ -22,7 +23,7 @@ class Rectangle:
         Getter for width
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
@@ -42,6 +43,7 @@ class Rectangle:
         getter for height
         """
         return self.__height
+
     @height.setter
     def height(self, value):
         """
@@ -61,7 +63,7 @@ class Rectangle:
         Returns the rectangle area
         """
         return self.__width * self.__height
-        
+
     def perimeter(self):
         """
         Public method to calculate the rectangle perimeter
@@ -70,7 +72,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
-        
+
     def __str__(self):
         """
         Returns a string of the rectangle using the character "#"
