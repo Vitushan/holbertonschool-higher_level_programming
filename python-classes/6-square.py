@@ -3,6 +3,8 @@
 """
 This is a module of square class based on previous task.
 """
+
+
 class Square:
     """
     This class defines a square with:
@@ -16,6 +18,13 @@ class Square:
         Initializes the Square with an optional size (default is 0)
         Validates that is an integer and >= 0.
         """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        if not isinstance(position, tuple) or len(position) != 2 or not all(
+            isinstance(i, int) and i >= 0 for i in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.size = size
         self.__position = position
 
@@ -53,8 +62,7 @@ class Square:
         Setter for the position attribute.
         Returns the private attribute __position.
         """
-        if not isinstance(value, tuple): #or len(position) != 2 or not all(
-            #isinstance(i, int) and i >= 0 for i in position):
+        if not isinstance(value, tuple):
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
             self.__position = position
