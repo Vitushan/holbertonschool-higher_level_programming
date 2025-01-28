@@ -55,29 +55,29 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-        def area(self):
-            """
-            Public method to calculate the area of the rectangle
-            Returns the rectangle area
-            """
-            return self.__width * self.__height
+    def area(self):
+        """
+        Public method to calculate the area of the rectangle
+        Returns the rectangle area
+        """
+        return self.__width * self.__height
         
-        def perimeter(self):
-            """
-            Public method to calculate the rectangle perimeter
-            Return the rectangle perimeter. If width or height is 0, returns 0
-            """
-            if self.__width == 0 or self.__height == 0:
-                return 0
-            return 2 * (self.__width + self.__height)
+    def perimeter(self):
+        """
+        Public method to calculate the rectangle perimeter
+        Return the rectangle perimeter. If width or height is 0, returns 0
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
         
-        def __str__(self):
-            """
-            Returns a string of the rectangle using the character "#"
-            if width or height is zero return empty string
-            """
-            if self.__width == 0 or self.__height == 0:
-                rectangle = []
-                for _ in range(self.__height):
-                    rectangle.append("#" * self.__width)
-                return rectangle
+    def __str__(self):
+        """
+        Returns a string of the rectangle using the character "#"
+        if width or height is zero return empty string
+        """
+        if self.__width == 0 or self.__height == 0:
+            rectangle = []
+            for _ in range(self.__height):
+                rectangle.append("#" * self.__width)
+            return rectangle
