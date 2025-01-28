@@ -17,7 +17,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-
     @property
     def width(self):
         """
@@ -75,6 +74,6 @@ class Rectangle:
         Public method to calculate the rectangle perimeter
         Return the rectangle perimeter. If width or height is 0, returns 0.
         """
-        if self.width or self.height == 0 and perimeter == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
