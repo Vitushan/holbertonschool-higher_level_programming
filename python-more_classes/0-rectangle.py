@@ -3,9 +3,9 @@
 This is a module a square class
 """
 
-class Rectangle
+class Rectangle:
 
-"""
-defined empty class a rectangle
-"""
+    """
+    defined empty class a rectangle
+    """
 pass
