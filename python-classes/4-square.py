@@ -17,10 +17,10 @@ class Square:
     """
 
     def __init__(self, size=0):
-        '''
+        """
         Initializes the Square with an optional size (default is 0).
         Validates that size is an integer and >= 0.
-        '''
+        """
         self.size = size
 
     @property
@@ -58,8 +58,8 @@ class Square:
         if size is 0, print and empty line.
         """
 
-    if self.__size == 0:
-        print()
-    else:
-        for _ in range(self.__size):
-            print("#" * self.__size)
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
