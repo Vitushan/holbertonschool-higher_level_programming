@@ -4,6 +4,7 @@
 this is a module for defining a rectangle class
 """
 
+
 class Rectangle:
 
     """
@@ -16,7 +17,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        
 
     @property
     def width(self):
