@@ -3,9 +3,10 @@
 This is a module a square class
 """
 
+
 class Rectangle:
 
     """
     defined empty class a rectangle
     """
-pass
+    pass
