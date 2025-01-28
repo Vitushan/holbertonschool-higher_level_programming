@@ -53,10 +53,11 @@ class Square:
         Setter for the position attribute.
         Returns the private attribute __position.
         """
-        if not isinstance(position, tuple) or len(position) != 2 or not
-        all(isinstance(i, int) and i >= 0 for i in position):
-        raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
+        if not isinstance(position, tuple) or len(position) != 2 or not all(
+            isinstance(i, int) and i >= 0 for i in position):
+            raise TypeError(
+                "position must be a tuple of 2 positive integers")
+            self.__position = position
 
     def area(self):
         """
@@ -72,10 +73,10 @@ class Square:
         If size is 0, print an empty line.
         """
 
-    if self.__size == 0:
-        print()
-    else:
-        for _ in range(self.__position[1]):
+        if self.__size == 0:
             print()
-        for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+        else:
+            for _ in range(self.__position[1]):
+                print()
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
