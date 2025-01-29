@@ -80,3 +80,9 @@ class Rectangle:
         to recreate a new instance
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """
+        print a message when an instance or rectangle is deleted
+        """
+        print("Bye rectangle...")
