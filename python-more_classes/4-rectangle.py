@@ -26,7 +26,7 @@ class Rectangle:
         """
         Setter for width with validation:
         - must be an integer
-        -must be > 0
+        -must be >= 0
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -78,7 +78,6 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join("#" * self.__width for _ in range(self.__height))
-    
 
     def __repr__(self):
         """
