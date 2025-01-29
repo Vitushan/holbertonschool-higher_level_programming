@@ -9,6 +9,7 @@ class Rectangle:
     A class to represent rectangle
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -22,11 +23,9 @@ class Rectangle:
     @property
     def width(self):
         """
-        Setter for width with validation
-        must be an integrer
-        must be >= 0
+        Getter for width
         """
-        
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -36,8 +35,9 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width must >= 0")
-        
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
     @property
     def height(self):
         """
@@ -48,7 +48,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """
-        setter for height
+        setter for height with validation
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -73,7 +73,7 @@ class Rectangle:
     def __str__(self):
         """
         Returns a string representation of the rectangle
-        using the characher "#".
+        using the character "#".
         """
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -84,7 +84,7 @@ class Rectangle:
         returns a string representation of the rectangle
         to recreate a new instance
         """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle ({}, {})".format(self.width, self.height)
 
     def __del__(self):
         """
