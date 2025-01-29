@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+
 """
 this is a module for defining a rectangle class
 """
+
+
 class Rectangle:
     """
     A class to represent rectangle
@@ -20,7 +23,7 @@ class Rectangle:
         Getter fot width
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
@@ -60,7 +63,7 @@ class Rectangle:
         Returns the rectangle area
         """
         return self.__width * self.__height
-    
+
     def perimeter(self):
         """
         Public method to calculate the rectangle perimeter
@@ -81,7 +84,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string representation of the rectangle to 
+        Returns a string representation of the rectangle to
         recreate a new instance
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
