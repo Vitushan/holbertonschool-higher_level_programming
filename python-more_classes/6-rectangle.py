@@ -89,3 +89,9 @@ class Rectangle:
         print a message when a instance or rectangle is deleted
         """
         print("bye rectangle...")
+
+        rect = Rectangle(3, 4)
+        print(repr(rect))
+
+        new_rect = eval(repr(rect))
+        print(new_rect is rect)
