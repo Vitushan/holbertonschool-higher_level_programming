@@ -4,6 +4,7 @@
 this is a module for defining a rectangle class
 """
 
+
 class Rectangle:
     """
     A class to represent rectangle
@@ -12,7 +13,7 @@ class Rectangle:
         """
         Initialize a rectangle with optional width and height.
         Validations are performed for the parameters
-        """ 
+        """
         self.width = width
         self.height = height
 
@@ -31,7 +32,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise TypeError("width must be >= 0")
-        
+
     @property
     def height(self):
         """
@@ -51,7 +52,7 @@ class Rectangle:
         area returns the rectangle area
         """
         return self.__width * self.__height
-    
+
     def perimeter(self):
         """
         Return the rectangle perimeter
@@ -68,11 +69,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join("#" * self.__width for _ in range(self.__height))
-    
+
     def __repr__(self):
         """
         Returns a string representation of the rectangle
         to recreate a new instance
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
-    
