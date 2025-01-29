@@ -13,6 +13,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+
     @property
     def width(self):
         """
@@ -85,4 +86,3 @@ class Rectangle:
         recreate a new instance
         """
         return "Rectangle ({}, {})".format(self.__width, self.__height)
-    
