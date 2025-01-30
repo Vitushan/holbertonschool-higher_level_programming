@@ -26,7 +26,7 @@ class Rectangle:
         getter for width"
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -54,8 +54,8 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height:
             return ""
-        return "\n".join([str(self.print_symbol
-                              ) * self.width for _ in range (self.height)])
+        return "\n".join([str(self.print_symbol) * self.width for _ in range(
+            self.height)])
 
     def __repr__(self):
         """
@@ -70,7 +70,7 @@ class Rectangle:
         when an instance of Rectangle is deleted
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances =- 1
+        Rectangle.number_of_instances = - 1
 
     def bigger_or_equal(rect_1, rect_2):
         """
@@ -83,6 +83,7 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
+
 
 @classmethod
 def square(cls, size=0):
