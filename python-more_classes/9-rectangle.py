@@ -32,7 +32,21 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError("width must be >= 0")
+
+    @property
+    def height(self):
+        """
+        Getter for height
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >=0")
 
     def area(self):
         """
@@ -52,7 +66,7 @@ class Rectangle:
         """
         print the rectangle with the character "#"
         """
-        if self.__width == 0 or self.__height:
+        if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join([str(self.print_symbol) * self.width for _ in range(
             self.height)])
@@ -83,7 +97,6 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
-
 
     @classmethod
     def square(cls, size=0):
