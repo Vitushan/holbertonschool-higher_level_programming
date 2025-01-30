@@ -11,12 +11,14 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-
     def __init__(self, width=0, height=0):
-
+        """
+        Initialize a rectangle with optional width and height.
+        Validations are performed for the parameters
+        """
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -46,7 +48,7 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = height
+        self.__height = value
 
     def area(self):
         """
@@ -58,6 +60,6 @@ class Rectangle:
         """
         returns a rectangle perimeter
         """
-        if width == 0 or height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
