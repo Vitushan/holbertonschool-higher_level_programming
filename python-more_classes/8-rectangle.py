@@ -65,10 +65,10 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        if width == 0 or height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
         return "\n".join([str(self.print_symbol) * self.width for _
-    in range()self.height])
+    in range(self.height)])
 
     def __repr__(self):
         """
@@ -83,7 +83,7 @@ class Rectangle:
         when an instance of Rectangle is deleted 
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances =- 1
+        Rectangle.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
