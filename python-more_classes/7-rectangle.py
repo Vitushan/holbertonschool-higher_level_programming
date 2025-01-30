@@ -3,7 +3,6 @@
 this is a module for defining a rectangle class
 """
 
-
 class Rectangle:
     """
     A class to represent rectangle
@@ -98,7 +97,9 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         """
         comparse area and returns the biggest rectangle based on the area
+        and verify if rect_1 and rect_2 is a rectangle or not.
         """
+
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance or Rectangle")
         if not isinstance(rect_2, Rectangle):

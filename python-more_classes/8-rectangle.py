@@ -5,13 +5,15 @@ This is a module for defining a rectangle class
 
 
 class Rectangle:
-     """
+    """
     A class to represent rectangle
     """
-     number_of_instances = 0
-     print_symbol = "#"
+    number_of_instances = 0
+    print_symbol = "#"
+
 
 def __init__(self, width=0, height=0):
+
     self.width = width
     self.height = height
     number_of_instances += 1
@@ -59,5 +61,3 @@ def __init__(self, width=0, height=0):
         if width == 0 or height == 0:
             return 0
         return 2 * (self.__width + self.__height)
-        
-
