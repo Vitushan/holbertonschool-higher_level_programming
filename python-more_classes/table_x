@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+def afficher_multiplication(n, min=1, max=10):
+    if min > max:
+        min, max = max, min
+        print("Attention : min et max ont été inversés")
+
+
+    for i in range(min, max+1):
+        print(f"{n} x {i} = {n * i}")
+
+afficher_multiplication(4, 0, 10)
