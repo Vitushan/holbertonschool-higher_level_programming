@@ -7,6 +7,6 @@ def is_same_class(obj, a_class):
     """
 
 
-if is_same_class <= 0:
-    return True
-return False
+    if obj == a_class:
+        return True
+    return False
