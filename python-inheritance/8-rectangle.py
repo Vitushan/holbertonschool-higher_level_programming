@@ -8,6 +8,7 @@ class Rectangle:
     """
     This is a Rectangle class
     """
+
     def __init__(self, width, height):
         """
         constructor for width and height
