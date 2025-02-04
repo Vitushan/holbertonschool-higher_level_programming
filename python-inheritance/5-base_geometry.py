@@ -4,3 +4,7 @@ This is a module a square class
 """
 
 
+class BaseGeometry:
+    """
+    this is a empty class
+    """
