@@ -6,7 +6,7 @@ This is a module a square class
 
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
-class Rectangle:
+class Rectangle(BaseGeometry):
     """
     This is a Rectangle class
     that inherits from BaseGeometry
