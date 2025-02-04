@@ -1,22 +1,23 @@
 #!/usr/bin/python3
 """
-This is a module a square class
+Module containing the BaseGeometry class.
 """
 
 
 class BaseGeometry:
     """
-    this a class based in previous task
+    Base class for geometry-related operations.
     """
     def area(self):
         """
-        Return a Geometry area
+        Raises an exception to indicate that 
+        the method is not implemented.
         """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
-        check if the args is valided integer
+        Validates that value is a positive integer.
         """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
