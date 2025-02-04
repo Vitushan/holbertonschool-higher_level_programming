@@ -13,4 +13,4 @@ class BaseGeometry:
         """
         Return a Geometry area
         """
-    raise TypeError("area() is not implemented")
+        raise Exception("area() is not implemented")
