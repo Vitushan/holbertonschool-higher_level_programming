@@ -17,7 +17,7 @@ class Square(Rectangle):
         of the square.
         The size must be positive integers.
         """
-        self.__integer_validator("size", size)
+        self.integer_validator("size", size)
 
         self.__size = size
 
