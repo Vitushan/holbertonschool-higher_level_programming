@@ -1,25 +1,17 @@
-BaseGeometry
-
 >>> bg = BaseGeometry()
-
-# Test for area() -> Should raise an exception
 >>> bg.area()
 Traceback (most recent call last):
     ...
 Exception: area() is not implemented
 
-# Test for integer_validator() with a valid integer_validator
 >>> bg.integer_validator("my_int", 12)
-
 >>> bg.integer_validator("width", 89)
 
-# Test for integer_validator() with a string
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
 
-# Test for integer_validator() with zero
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
     ...
