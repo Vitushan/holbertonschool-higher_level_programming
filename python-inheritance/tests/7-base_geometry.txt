@@ -3,10 +3,10 @@ This is the test for base_geometry function.
 """
 
 # Importing the function from the module:
-    >>> BaseGeometry = __import__("7-base_geometry).BaseGeometry
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 # Testing for module docstring:
-    >>>m = __import__("7-base_geometry").__doc__
+    >>> m = __import__("7-base_geometry").__doc__
     >>> len(m) > 1
     True
 
@@ -16,7 +16,6 @@ This is the test for base_geometry function.
     True
 
 # Testing for method docstring:
-    >>> mod =
-BaseGeometry.integer_validator.__doc__
+    >>> mod = BaseGeometry.integer_validator.__doc__
     >>> len(mod) > 1
     True
