@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This is a module with the  "abc method" class
+This is a module defining an "abc method" class
+with sublasses Dog and Cat
 """
 
 
@@ -9,12 +10,13 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
     """
-    This is a Animal abstract class
+    Abstract base class representing an animal.
     """
     @abstractmethod
     def sound(self):
         """
-        Abstract method to be implemented by sublasses
+        Abstract method to be implementes by suclasses.
+        return a string representing the sound an animal makes
         """
         pass
 
