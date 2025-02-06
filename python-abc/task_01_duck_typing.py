@@ -1,21 +1,22 @@
 #!/usr/bin/python3
 """
-This is a module defining an "abc method" class
-with sublasses Dog and Cat
+This is a module define a shape
 """
 
 
 from abc import ABC, abstractmethod
 import math
-class Shape(ABC):
-    def shape_info(Shape):
+
+def shape_info(shape):
         """
         Display perimeter and shape area
         """
-        print(f"area: {Shape.area()}")
-        print(f"perimeter: {Shape.perimeter()}")
+        print(f"area: {shape.area()}")
+        print(f"perimeter: {shape.perimeter()}")
+
+class Shape(ABC):
     """
-    '((()))
+    this is a class shape inherit ABC from abc
     """
 
     @abstractmethod
@@ -34,11 +35,11 @@ class Shape(ABC):
 
 class Circle(Shape):
     """
-    ;;;
+    that circle class  inherit  from shape
     """
     def __init__(self, radius):
         """
-        kgjgnjkn
+        this is a constructor init
         """
         self.radius = radius
 
@@ -46,13 +47,13 @@ class Circle(Shape):
         """
         calculate area perimeter
         """
-        return math.pi * radius ** 2
+        return math.pi * self.radius ** 2
 
-    def perimeter(self, radius):
+    def perimeter(self):
         """
         calculate radius perimeter 
         """
-        return 2 * math.pi * radius
+        return 2 * math.pi * self.radius
     
 class Rectangle(Shape):
     """
@@ -60,20 +61,19 @@ class Rectangle(Shape):
     """
     def __init__(self, width, height):
         """
-        ljgnjnglr
+        __init__ constructor
         """
         self.width = width
         self.height = height
 
-    def area(self, width, height):
+    def area(self):
         """
         Calculate a rectangle area
         """
         return self.width * self.height
 
-    def perimeter(self, width, height):
+    def perimeter(self):
         """
-        fbfgb
+        calculate perimeter
         """
         return 2 * (self.width + self.height)
-
