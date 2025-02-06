@@ -8,6 +8,12 @@ with sublasses Dog and Cat
 from abc import ABC, abstractmethod
 import math
 class Shape(ABC):
+    def shape_info(Shape):
+        """
+        Display perimeter and shape area
+        """
+        print(f"area: {Shape.area()}")
+        print(f"perimeter: {Shape.perimeter()}")
     """
     '((()))
     """
@@ -71,9 +77,3 @@ class Rectangle(Shape):
         """
         return 2 * (self.width + self.height)
 
-    def shape_info(Shape):
-        """
-        Display perimeter and shape area
-        """
-        print(f"area: {Shape.area()}")
-        print(f"perimeter: {Shape.perimeter()}")
