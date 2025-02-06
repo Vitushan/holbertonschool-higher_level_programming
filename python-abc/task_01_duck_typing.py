@@ -18,7 +18,7 @@ def shape_info(shape):
 
 class Shape(ABC):
     """
-    this is a class shape inherit ABC from abc
+    This is an abstract class Shape, inheriting ABC from the abc module.
     """
 
     @abstractmethod
@@ -38,7 +38,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     """
-    that circle class  inherit  from shape
+    that circle class a circle, which inherits from Shape
     """
     def __init__(self, radius):
         """
@@ -61,7 +61,8 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """
-    Defines a rectangle class
+    This is an abstract class Shape, inheriting ABC from the abc module.
+
     """
     def __init__(self, width, height):
         """
