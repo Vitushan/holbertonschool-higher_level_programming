@@ -7,12 +7,14 @@ This is a module define a shape
 from abc import ABC, abstractmethod
 import math
 
+
 def shape_info(shape):
-        """
-        Display perimeter and shape area
-        """
-        print(f"area: {shape.area()}")
-        print(f"perimeter: {shape.perimeter()}")
+    """
+    Display perimeter and shape area
+    """
+    print(f"area: {shape.area()}")
+    print(f"perimeter: {shape.perimeter()}")
+
 
 class Shape(ABC):
     """
@@ -33,6 +35,7 @@ class Shape(ABC):
         """
         pass
 
+
 class Circle(Shape):
     """
     that circle class  inherit  from shape
@@ -51,10 +54,11 @@ class Circle(Shape):
 
     def perimeter(self):
         """
-        calculate radius perimeter 
+        calculate radius perimeter
         """
         return 2 * math.pi * self.radius
-    
+
+
 class Rectangle(Shape):
     """
     Defines a rectangle class
