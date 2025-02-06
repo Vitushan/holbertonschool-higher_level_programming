@@ -12,8 +12,8 @@ def shape_info(shape):
     """
     Display perimeter and shape area
     """
-    print(f"area: {shape.area()}")
-    print(f"perimeter: {shape.perimeter()}")
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
 
 
 class Shape(ABC):
