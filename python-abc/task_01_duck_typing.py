@@ -65,7 +65,7 @@ class Rectangle(Shape):
     """
     def __init__(self, width, height):
         """
-        __init__ constructor
+        this is init constructor
         """
         self.width = width
         self.height = height
