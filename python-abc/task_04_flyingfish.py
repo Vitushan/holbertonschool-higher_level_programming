@@ -2,6 +2,8 @@
 """
 this is a multiple inheritance module
 """
+
+
 class Fish:
     """
     this is a fish class
@@ -12,6 +14,7 @@ class Fish:
     def habitat(self):
         print("The fish lives in water")
 
+
 class Bird:
     """
     this is a bird class
@@ -21,6 +24,7 @@ class Bird:
 
     def habitat(self):
         print("The bird lives in the sky")
+
 
 class FlyingFish(Fish, Bird):
     """
