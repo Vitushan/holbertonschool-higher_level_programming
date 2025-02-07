@@ -4,7 +4,7 @@ This is a module define a shape
 """
 
 
-from math import pi
+import math
 from abc import ABC, abstractmethod
 
 
