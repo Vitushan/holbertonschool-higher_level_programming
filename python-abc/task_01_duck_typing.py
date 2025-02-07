@@ -44,6 +44,7 @@ class Circle(Shape):
         """
         this is a constructor init
         """
+        radius = abs(radius)
         self.radius = radius
 
     def area(self):
