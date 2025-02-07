@@ -24,4 +24,4 @@ class Dragon(SwimMixin, FlyMixin):
     Class dragon that can swim and fly
     """
     def roar(self):
-        print("roar")
+        print("The dragon roars!")
