@@ -20,6 +20,6 @@ class Student:
         """
         ...
         """
-        if isinstance(attrs, str):
+        if isinstance(attrs, list):
             return self.__dict__
         return self.attrs
