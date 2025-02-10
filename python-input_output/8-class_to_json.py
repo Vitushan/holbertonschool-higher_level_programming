@@ -6,4 +6,4 @@ def class_to_json(obj):
     """
     ...
     """
-    return __dict__(obj)
+    __dict__(obj)
