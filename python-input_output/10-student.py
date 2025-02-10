@@ -21,6 +21,6 @@ class Student:
         ...
         """
         attrs.__dict__
-        if isinstance(attrs, str):
+        if isinstance(attrs, list):
             return self.attrs
         return self.__dict__  
