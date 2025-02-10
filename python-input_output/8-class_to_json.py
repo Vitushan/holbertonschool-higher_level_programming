@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-...
+Return the dictionary description
 """
 def class_to_json(obj):
     """
-    ...
+    return dictionary of item fo the serializing JSON
     """
-    __dict__(obj)
+    obj.__dict__
