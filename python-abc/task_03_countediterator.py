@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-...
+this is a module for count a iterator
 """
 
 
@@ -15,7 +15,7 @@ class CountedIterator:
     
     def __next__(self):
         """
-        ...
+        obj next the next element in iterator
         """
         obj = next(self.iterator)
         self.count += 1
@@ -25,6 +25,6 @@ class CountedIterator:
 
     def get_count(self):
         """
-        ...
+        get and return the count
         """
         return self.count
