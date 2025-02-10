@@ -12,7 +12,7 @@ class Student:
 
     def __init__(self, first_name, last_name, age):
         """
-        ...
+        initializing student instance with name , last name and age
         """
         self.first_name = first_name
         self.last_name = last_name
@@ -22,4 +22,4 @@ class Student:
         """
         return a dictionary representing a student class
         """
-        return Student.__dict__
+        return self.__dict__
