@@ -9,7 +9,6 @@ class Student:
     Class student defining a Student
     """
 
-
     def __init__(self, first_name, last_name, age):
         """
         initializing student instance with name , last name and age
