@@ -9,5 +9,5 @@ def load_from_json_file(filename):
     """
     ...
     """
-    with open(filename, 'w') as f:
-        json.dumps(filename)
+    with open(filename, 'r') as f:
+        json.load(f)
