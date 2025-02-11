@@ -20,7 +20,9 @@ class Student:
         """
         verify file type and  if instance list is empty or not
         """
-        attrs.__dict__
-        if isinstance(attrs, list):
-            return self.attrs
-        return self.__dict__  
+        
+        if attrs is None:
+            return self.__dict__
+
+        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
+            return {key: value for key, value in self.__dict__.items() if key in attrs} 
