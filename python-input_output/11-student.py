@@ -4,6 +4,8 @@
 
 """
 
+import json
+
 
 class Student:
     """
@@ -30,3 +32,9 @@ class Student:
             return {
                 key: value for key, value in self.__dict__.items()
             }
+
+    def reload_from_json(self, json):
+        """
+        Load file from json
+        """
+        return __dict__
