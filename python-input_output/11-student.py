@@ -3,8 +3,6 @@
  Class student defining a student based on task 10
 """
 
-import json
-
 
 class Student:
     """
