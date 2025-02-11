@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-...
+append a string end returns the number of characters
 """
 
 
