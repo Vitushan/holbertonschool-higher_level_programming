@@ -38,4 +38,4 @@ class Student:
         replace all attributes of the instance bases on the dictionary
         """
         for key, value in json.item():
-            setattr(self, key, value)
+            return setattr(self, key, value)
