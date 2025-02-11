@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-;;;
+ Class student defining a student based on task 10
+
 """
 
 
 class Student:
     """
-    ...
+     Class student defining a student based on task 09
+
     """
     def __init__(self, first_name, last_name, age):
         """
