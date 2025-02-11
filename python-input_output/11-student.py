@@ -22,6 +22,11 @@ class Student:
         """
         ...
         """
-        if isinstance(attrs, list):
+        if attrs is None:
             return self.__dict__
-        return self.attrs
+
+        if isinstance(attrs, list) and all(
+                isinstance(attr, str) for attr in attrs):
+            return {
+                key: value for key, value in self.__dict__.items()
+            }
