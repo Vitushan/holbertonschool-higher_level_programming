@@ -13,7 +13,7 @@ class CustomObject:
     def __init__(self, name, age, is_student):
         self.name = name
         self.age = age
-        is_student = is_student
+        self.is_student = is_student
     
     def display(self):
         """
@@ -25,7 +25,7 @@ class CustomObject:
         """
         Serializes the object and saves it to a file.
         """
-        with open(filename, "wb", encoding="utf-8") as f:
+        with open(filename, "wb") as f:
             pickle.dump(self, f)
 
     @classmethod
@@ -33,5 +33,5 @@ class CustomObject:
         """
         Deserializes an object from a file and returns an instance.
         """
-        with open(filename, "rb", encoding="8-utf") as f:
+        with open(filename, "rb") as f:
             return pickle.load(f)
