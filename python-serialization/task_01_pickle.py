@@ -37,3 +37,4 @@ class CustomObject:
         """
         with open(filename, "rb") as f:
             return pickle.load(f)
+        return None
