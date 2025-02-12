@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-;;;:
+this module serialize data and save to the file
 """
 
 
