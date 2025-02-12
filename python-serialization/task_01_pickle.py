@@ -6,6 +6,7 @@ Serialize and deserialize custom python object by the pickle module
 
 import pickle
 
+
 class CustomObject:
     """
     A custom class with serialization and deserialization methods.
@@ -14,12 +15,13 @@ class CustomObject:
         self.name = name
         self.age = age
         self.is_student = is_student
-    
+
     def display(self):
         """
         display the object's attributes.
         """
-        print(f"Name: {self.name}\nAge: {self.age}\nIs Student: {self.is_student}")
+        print(f"Name: {self.name}\nAge: {self.age}\nIs Student:\
+              {self.is_student}")
 
     def serialize(self, filename):
         """
