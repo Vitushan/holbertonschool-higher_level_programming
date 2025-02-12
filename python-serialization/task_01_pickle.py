@@ -20,7 +20,8 @@ class CustomObject:
         """
         display the object's attributes.
         """
-        print(f"Name: {self.name}\nAge: {self.age}\nIs Student:{self.is_student}")
+        print(f"Name: {self.name}\nAge: {self.age}\nIs Student:\
+              {self.is_student}")
 
     def serialize(self, filename):
         """
