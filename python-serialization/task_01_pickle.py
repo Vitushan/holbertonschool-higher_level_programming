@@ -27,15 +27,22 @@ class CustomObject:
         """
         Serializes the object and saves it to a file.
         """
-        with open(filename, "wb") as f:
-            return pickle.dump(self, f)
-        return None
+        try:
+            with open(filename, "wb") as f:
+                pickle.dump(self, f)
+            print(f"Object successfully serialized to {filename}")
+        except (OSError, pickle.PickleError) as e:
+            print(f"Serialization error: {e}")
+            return None
 
     @classmethod
     def deserialize(cls, filename):
         """
         Deserializes an object from a file and returns an instance.
         """
-        with open(filename, "rb") as f:
-            return pickle.load(f)
-        return None
+        try:
+            with open(filename, "rb") as f:
+                return pickle.load(f)
+        except (FileNotFoundError, pickle.PickleError, EOFError) as e:
+            print(f"Deserialization error: {e}")
+            return None
