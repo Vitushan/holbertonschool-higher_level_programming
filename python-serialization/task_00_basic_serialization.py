@@ -20,4 +20,4 @@ def load_and_deserialize(filename):
     ...
     """
     with open(filename, "r", encoding="utf-8") as f:
-        return json.loads(filename)
+        json.load(f)
