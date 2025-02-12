@@ -1,4 +1,4 @@
-#!/usr/bin/bash/python3
+#!/usr/bin/python3
 """
 Serialize and deserialize custom python object by the pickle module
 """
