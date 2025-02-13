@@ -8,7 +8,7 @@ import json
 import csv
 
 
-def  convert_csv_to_json(csv_filename):
+def convert_csv_to_json(csv_filename):
     """
     convert the csv file to json file
     """
@@ -22,7 +22,6 @@ def  convert_csv_to_json(csv_filename):
 
         print(f"Sucess: {csv_filename} has been converted to data.json")
         return True
-        
 
     except FileNotFoundError:
         print(f"Error : the file '{csv_filename}' is not found.")
