@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 def serialize_to_xml(dictionary, filename):
     """
-    this is a function for serialize a dictionary in xml file and save this.
+    serialize a dictionary in xml file and save it.
     """
     root = ET.Element("data")
 
