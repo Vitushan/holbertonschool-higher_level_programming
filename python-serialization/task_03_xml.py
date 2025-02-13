@@ -16,7 +16,7 @@ def serialize_to_xml(dictionary, filename):
         item = ET.SubElement(root, key)
         item.text = str(value)
 
-    tree = ET.Element(root)
+    tree = ET.ElementTree(root)
     tree.write(filename, encoding="utf-8", xml_declaration=True)
 
 
