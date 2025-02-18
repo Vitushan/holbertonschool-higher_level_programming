@@ -5,7 +5,6 @@
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
-import socketserver
 
 
 class SimpleServer(BaseHTTPRequestHandler):
@@ -37,7 +36,7 @@ class SimpleServer(BaseHTTPRequestHandler):
 
         elif self.path == "/info":
             self.send_response(200)
-            self.send_header("Content-type", "text/plain")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             info = {"version": "1.0", "description": "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode())
