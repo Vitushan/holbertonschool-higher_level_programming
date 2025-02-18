@@ -52,6 +52,6 @@ class SimpleServer(BaseHTTPRequestHandler):
 
 
 PORT = 8000
-with socketserver.TCPserver(("", PORT), SimpleServer) as httpd:
+with socketserver.TCPServer(("", PORT), SimpleServer) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
