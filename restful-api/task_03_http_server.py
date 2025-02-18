@@ -38,7 +38,7 @@ class SimpleServer(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            info = {"Version": "1.0", "description:" "A simple API built with http.server"}
+            info = {"Version": "1.0", "description": "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode())
 
         else:
