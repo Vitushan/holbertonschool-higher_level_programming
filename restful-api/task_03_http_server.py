@@ -50,6 +50,6 @@ class SimpleServer(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(error_message).encode())
 
 PORT = 8000
-with socketserver.TCPserver(("", PORT), http_SimpleServer) as httpd:
+with socketserver.TCPserver(("", PORT), SimpleServer) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
