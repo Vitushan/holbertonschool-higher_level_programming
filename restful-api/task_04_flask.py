@@ -5,7 +5,7 @@ Develop a Simple API using Python with Flask
 
 
 from flask import Flask
-from flask import jsonify, json, request
+from flask import jsonify, request
 
 app = Flask(__name__)
 
@@ -34,11 +34,10 @@ def status():
     """
     return "OK" if alright"
     """
-    return "OK"
+    return jsonify({"status": "OK"})
 
 @app.route("/users/<username>")
-
-def users(username):
+def get_users(username):
     """
     Return user info data
     """
@@ -47,7 +46,7 @@ def users(username):
     else:
         return ({"error": "User not found"}), 404
 
-@app.route("/add_user")
+@app.route("/add_user", methods=["POST"])
 def add_user():
     """
     add a new user in API with POST request
