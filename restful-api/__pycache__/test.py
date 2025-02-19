@@ -4,41 +4,52 @@
 """
 
 
-import requests
-import csv
+from http.server import BaseHTTPRequestHandler
+import socketserver
+import json
 
-def fetch_and_print_posts():
+
+class SimpleServer(BaseHTTPRequestHandler):
     """
     ...
     """
-    url = "https://jsonplaceholder.typicode.com/posts"
-    response = requests.get(url)
-    print("Status Code: {}".format(response.status_code))
+    def do_Get(self):
+        """
+        ..
+        """
+        if self.path == "/":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API")
 
-    if response.status_code == 200:
-        posts = response.json()
+        elif self.path == "/data":
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            data = {"name": "John", "age": 30, "city": "New_york"}
+            self.wfile.write(json.dumps(data).encode("utf-8"))
 
-        for post in posts:
-            print(post["title"])
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"OK")
 
-def fetch_and_save_posts():
-    """
-    ...
-    """
-    url = "https://jsonplaceholder.typicode.com/posts"
-    response = requests.get(url)
-    print("Staus Code: {}".format(response.status_code))
+        elif self.path == "/info":
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            info = {"version": "1.0", "description":
+                    "A simple API buile with http.server"}
+            self.wfile.write(json.dumps(info).encode("utf-8"))
+        else:
+            self.send_response(404)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
 
-    if response.status_code == 200:
-        posts = response.json()
-
-        with open('posts.csv', mode='w', newline='', encoding='utf-8') as file:
-            writer = csv.DictWriter(file, fieldnames=["id", "title", "body"])
-
-        writer.writeheader()
-
-        for post in posts:
-            writer.writerow({"id": post["id"], "title": post["title"], "body": post["body"]})
-        print("Data Saved to 'posts.csv'.")
-    else:
-        print("Failed to fetch posts. Status code : {}".format(response.status_code))
+PORT = 8000
+with socketserver.TCPServer(("", PORT, SimpleServer)) as httpd:
+    print("Serving at port", PORT)
+    httpd.serve_forever()
