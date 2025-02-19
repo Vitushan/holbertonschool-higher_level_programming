@@ -50,7 +50,7 @@ def users(username):
 @app.route("/add_user")
 def add_user():
     """
-    ...
+    add a new user in API with POST request
     """
     data = request.get_json()
     username = data.get("username")
@@ -64,9 +64,7 @@ def add_user():
         "age": data.get("age", 0),
         "city": data.get("city", "")
     }
-    return
-
-
+    return jsonify({"message": "User added", "user": users[username]}), 201
 
 
 if __name__ == "__main__":
