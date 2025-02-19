@@ -4,8 +4,7 @@ Develop a Simple API using Python with Flask
 """
 
 
-from flask import Flask
-from flask import jsonify, request
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -70,4 +69,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
