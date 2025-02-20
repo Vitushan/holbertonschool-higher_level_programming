@@ -4,14 +4,11 @@ Develop a Simple API using Python with Flask
 """
 
 
-from flask import Flask, jsonify, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-users = {
-    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-}
+users = {}
 
 
 @app.route("/")
@@ -64,9 +61,9 @@ def add_user():
         "name": data.get("name", ""),
         "age": data.get("age", 0),
         "city": data.get("city", "")
-    }
+    }, 201
     return jsonify({"message": "User added", "user": users[username]}), 201
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
