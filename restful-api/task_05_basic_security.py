@@ -35,9 +35,11 @@ def verify_password(username, password):
     """
     verify password for basic auth
     """
-    if username in users and check_password_hash(users[username]["password"], password):
+    if username in users and check_password_hash(
+            users[username]["password"], password):
         return username
     return None
+
 
 @app.route('/basic-protected')
 @auth.login_required
@@ -64,7 +66,10 @@ def login():
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
 
-    access_token = create_access_token(identity={"username":username, "role": user["role"]})
+    access_token = create_access_token(identity={
+        "username": username,
+        "role": user["role"]
+    })
     return jsonify({"access_token": access_token}), 200
 
 
