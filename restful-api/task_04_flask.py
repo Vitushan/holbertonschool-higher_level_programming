@@ -19,14 +19,14 @@ def home():
     return "Welcome to the Flask API!"
 
 @app.route('/data')
-def data():
+def get_data():
     """
     return data in json
     """
     return jsonify(list(users.keys()))
 
 @app.route('/status')
-def status():
+def get_status():
     """
     return "OK" if alright"
     """
@@ -62,7 +62,9 @@ def add_user():
         "age": data.get('age'),
         "city": data.get('city',)
     }, 201
-    return jsonify({'message': "User added", "user": users[username]}), 201
+    return jsonify({
+        'message': "User added", "user": users[username]
+        }), 201
 
 
 if __name__ == "__main__":
