@@ -45,7 +45,7 @@ def verify_password(username, password):
 @auth.login_required
 def basic_protected():
     """
-    ...
+    login Basic protected
     """
     return jsonify({"message": "Basic auth: Access Granted"}), 200
 
@@ -53,7 +53,7 @@ def basic_protected():
 @app.route("/login", methods=["POST"])
 def login():
     """
-    ...
+    endpoint for post login data
     """
     data = request.get_json()
     username = data.get("username")
@@ -98,7 +98,7 @@ def admin_only():
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     """
-    ...
+    Forbidden authorized
     """
     return jsonify({"error": "Missing or invalid token"}), 401
 
@@ -106,7 +106,7 @@ def handle_unauthorized_error(err):
 @jwt.invalid_token_loader
 def handle_invalid_token_error(err):
     """
-    ...
+    invalid handle token error
     """
     return jsonify({"error": "Invalid token"}), 401
 
@@ -114,7 +114,7 @@ def handle_invalid_token_error(err):
 @jwt.expired_token_loader
 def handle_expired_token_error(err):
     """
-    ...
+    expired handle token error
     """
     return jsonify({"error": "Token has expired"}), 401
 
