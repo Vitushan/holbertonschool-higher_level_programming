@@ -24,7 +24,7 @@ users = {
     },
     "admin1": {
         "username": "admin1",
-        "password": generate_password_hash("adminpass"),
+        "password": generate_password_hash("password"),
         "role": "admin"
         }
 }
@@ -47,7 +47,7 @@ def basic_protected():
     """
     login Basic protected
     """
-    return jsonify({"message": "Basic auth: Access Granted"}), 200
+    return jsonify({"message": "Basic Auth: Access Granted"}), 200
 
 
 @app.route("/login", methods=["POST"])
@@ -117,6 +117,21 @@ def handle_expired_token_error(err):
     expired handle token error
     """
     return jsonify({"error": "Token has expired"}), 401
+
+
+@jwt.revoked_token_loader
+def handle_revoked_token_error(jwt_header, jwt_payload):
+    """
+    Handle revoked token error
+    """
+    return jsonify({"error": "Token has been revoked"}), 401
+
+@jwt.needs_fresh_token_loader
+def handle_fresh_token_required(jwt_header, jwt_payload):
+    """
+    Handle fresh token required error
+    """
+    return jsonify({"error": "Fresh token required"}), 401
 
 
 if __name__ == "__main__":
