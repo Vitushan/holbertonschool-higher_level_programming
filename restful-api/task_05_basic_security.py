@@ -75,5 +75,5 @@ def handle_invalid_token_error(err):
 def handle_expired_token_error(err):
     return jsonify({"error": "Token has expired"}), 401
 
-if __name__ == "__main__":=
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
