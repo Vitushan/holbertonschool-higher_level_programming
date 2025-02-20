@@ -37,10 +37,9 @@ def get_users(username):
     """
     Return user info data
     """
-    if username in users:
-        return jsonify(users[username])
-    else:
-        return jsonify({'error": "User not found'}), 404
+    if not username in users:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(users[username]), 200
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
@@ -61,7 +60,7 @@ def add_user():
         "name": data.get('name'),
         "age": data.get('age'),
         "city": data.get('city',)
-    }, 201
+    }
     return jsonify({
         'message': "User added", "user": users[username]
         }), 201
