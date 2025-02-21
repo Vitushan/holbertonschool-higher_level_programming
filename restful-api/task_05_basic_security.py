@@ -38,7 +38,7 @@ def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(
             user["password"], password):
-        return user
+        return username
     return None
 
 
@@ -48,7 +48,7 @@ def basic_protected():
     """
     login Basic protected
     """
-    return "Basic Auth: Access Granted", 200
+    return "Basic Auth: Access Granted"
 
 
 @app.route("/login", methods=["POST"])
@@ -66,9 +66,9 @@ def login():
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
-
     access_token = create_access_token(identity=username)
-    return jsonify({"access_token": access_token}), 200
+    return jsonify(access_token=access_token)
+
 
 
 @app.route("/jwt-protected", methods=["GET"])
