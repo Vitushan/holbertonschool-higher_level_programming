@@ -35,6 +35,7 @@ def verify_password(username, password):
     """
     verify password for basic auth
     """
+    user = users.get(username)
     if username in users and check_password_hash(
             users[username]["password"], password):
         return username
@@ -47,7 +48,7 @@ def basic_protected():
     """
     login Basic protected
     """
-    return jsonify({"message": "Basic Auth: Access Granted"}), 200
+    return "Basic Auth: Access Granted", 200
 
 
 @app.route("/login", methods=["POST"])
@@ -60,7 +61,7 @@ def login():
     password = data.get("password")
 
     if not username or not password:
-        return jsonify({"error": "Username and password required"}), 400
+        return jsonify({"error": "Username and password required"}), 401
 
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
@@ -76,7 +77,7 @@ def jwt_protected():
     """
     JWT protected route
     """
-    return jsonify({"message": "JWT Auth: Access Granted"}), 200
+    return "JWT Auth: Access Granted", 200
 
 
 @app.route("/admin-only", methods=["GET"])
@@ -85,11 +86,11 @@ def admin_only():
     """
     only admin route
     """
-
     current_user = get_jwt_identity()
     user = users.get(current_user)
     if user["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
+    return "Admin Access: Granted", 200
 
 
 @jwt.unauthorized_loader
@@ -122,6 +123,7 @@ def handle_revoked_token_error(jwt_header, jwt_payload):
     Handle revoked token error
     """
     return jsonify({"error": "Token has been revoked"}), 401
+
 
 @jwt.needs_fresh_token_loader
 def handle_fresh_token_required(jwt_header, jwt_payload):
