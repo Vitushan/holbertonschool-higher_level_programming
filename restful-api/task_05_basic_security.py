@@ -70,7 +70,6 @@ def login():
     return jsonify(access_token=access_token)
 
 
-
 @app.route("/jwt-protected", methods=["GET"])
 @jwt_required()
 def jwt_protected():
