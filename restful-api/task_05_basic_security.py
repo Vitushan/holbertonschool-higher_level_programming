@@ -36,13 +36,13 @@ def verify_password(username, password):
     verify password for basic auth
     """
     user = users.get(username)
-    if username in users and check_password_hash(
-            users[username]["password"], password):
-        return username
+    if user and check_password_hash(
+            user["password"], password):
+        return user
     return None
 
 
-@app.route('/basic-protected')
+@app.route('/basic-protected', methods=["GET"])
 @auth.login_required
 def basic_protected():
     """
