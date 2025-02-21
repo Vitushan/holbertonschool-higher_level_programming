@@ -4,11 +4,12 @@ security API with Flask
 """
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
-from flask_jwt_extended import (
-    JWTManager, create_access_token, jwt_required, get_jwt_identity
-)
+from flask_jwt_extended import JWTManager, create_access_token
+from flask_jwt_extended import jwt_required, get_jwt
 from werkzeug.security import generate_password_hash, check_password_hash
-
+"""
+docstring
+"""
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
@@ -35,9 +36,9 @@ def verify_password(username, password):
     """
     verify password for basic auth
     """
-    user = users.get(username)
-    if user and check_password_hash(
-            user["password"], password):
+    if username in users and \
+        check_password_hash(
+            users[username]["password"], password):
         return username
     return None
 
@@ -56,17 +57,16 @@ def login():
     """
     endpoint for post login data
     """
-    data = request.get_json()
+    data = request.json
     username = data.get("username")
     password = data.get("password")
-
-    if not username or not password:
-        return jsonify({"error": "Username and password required"}), 401
 
     user = users.get(username)
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
-    access_token = create_access_token(identity=username)
+    role = user['role']
+    access_token = create_access_token(
+        identity=username, additional_claims={"role": role})
     return jsonify(access_token=access_token)
 
 
@@ -76,7 +76,7 @@ def jwt_protected():
     """
     JWT protected route
     """
-    return "JWT Auth: Access Granted", 200
+    return "JWT Auth: Access Granted"
 
 
 @app.route("/admin-only", methods=["GET"])
@@ -85,11 +85,11 @@ def admin_only():
     """
     only admin route
     """
-    current_user = get_jwt_identity()
-    user = users.get(current_user)
-    if user["role"] != "admin":
+    claims = get_jwt()
+    role = claims.get("role")
+    if role != "admin":
         return jsonify({"error": "Admin access required"}), 403
-    return "Admin Access: Granted", 200
+    return "Admin Access: Granted"
 
 
 @jwt.unauthorized_loader
@@ -132,5 +132,23 @@ def handle_fresh_token_required(jwt_header, jwt_payload):
     return jsonify({"error": "Fresh token required"}), 401
 
 
+@jwt.unauthorized_loader
+def handle_missing_token(err):
+    """error handling"""
+    return jsonify({"error": "Authorization header missing or invalid"}), 401
+
+
+@jwt.revoked_token_loader
+def handle_revoked_token(jwt_header, jwt_payload):
+    """error handling"""
+    return jsonify({"error": "Token has been revoked"}), 401
+
+
+@jwt.invalid_token_loader
+def handle_invalid_claims(err):
+    """error handling"""
+    return jsonify({"error": "Invalid token claims"}), 401
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
