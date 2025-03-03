@@ -2,4 +2,5 @@
 -- in the table second_table of the database.
 SELECT score, name
 FROM second_table
-ORDER BY score ASC;
+WHERE score >= 10
+ORDER BY score DESC;
