@@ -2,5 +2,5 @@
 --display the score and the name  by descending order
 SELECT score, name
 FROM second_table
-WHERE IF name != "" OR NONE
+WHERE IF name != ""
 ORDER BY score DESC;
