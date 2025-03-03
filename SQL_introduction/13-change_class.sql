@@ -2,4 +2,4 @@
 -- in the second_table of the database in MySQL server
 DELETE FROM second_table
 FROM score
-WHERE score <= 5
+WHERE score <= 5;
