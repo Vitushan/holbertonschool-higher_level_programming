@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 script lists all states with a name
-starting with N from rhe database
+starting by 'N' from the database hbtn_0e_0_usa.
 """
 
 import MySQLdb
@@ -18,6 +18,7 @@ if __name__ == "__main__":
     )
 
     cur = db.cursor()
+
     cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
     for row in cur.fetchall():
