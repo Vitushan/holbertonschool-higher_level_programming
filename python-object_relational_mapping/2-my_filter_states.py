@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     query = "SELECT * FROM states WHERE name = '{}'\
         ORDER BY id ASC".format(state_name)
-    cur.execute(query, (state_name,))
+    cur.execute(query)
 
     for row in cur.fetchall():
         print(row)
