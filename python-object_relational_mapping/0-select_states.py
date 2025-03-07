@@ -10,6 +10,3 @@ if __name__ == "__main__":
     [print(state) for state in cur.fetchall()]
     cur.close()
     db.close()
-    
-    
-                         
