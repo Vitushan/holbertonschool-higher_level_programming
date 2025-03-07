@@ -15,18 +15,13 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-
-    query = """
-        SELECT cities.name, states.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC;
-    """
-    cur.execute(query, (sys.argv[4],))
-
-    results = cur.fetchall()
-    print(", ".join([city[0] for city in results]))
+    cur = db.cursor()
+    cur.execute("SELECT cities.name FROM cities\
+                JOIN states ON cities.state_id = states.id\
+                WHERE states.name = %s\
+                ORDER BY cities.id ASC", (sys.argv[4],))
+    cities = cur.fetchall()
+    print(", ".join([city[0] for city in cities]))
 
     cur.close()
     db.close()
