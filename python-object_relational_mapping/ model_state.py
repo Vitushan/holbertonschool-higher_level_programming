@@ -8,11 +8,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
 class State (Base):
     """
     class that display state in the database
     """
+
     __tablename__ = "states"
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
