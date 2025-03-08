@@ -1,23 +1,19 @@
 #!/usr/bin/python3
 """Class definition of a State and an instance."""
 
-
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-import MySQLdb
 import sys
-
-
-Base = declarative_base()
-
-
-class State(Base):
-    """Class that displays state in the database."""
-
-    __tablename__ = "states"
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False)
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
 if __name__ == "__main__":
-    db = MySQLdb.connect
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    states_list = session.query(State).all()
+    for row in states_list:
+        print(f"{row.id}: {row.name}")
+    session.close()
