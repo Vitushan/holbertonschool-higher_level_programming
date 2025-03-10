@@ -1,15 +1,23 @@
 #!/usr/bin/python3
 """Class definition of a State and an instance."""
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
 
 
-class State(Base):
-    """Class that displays state in the database."""
+import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
-    __tablename__ = "states"
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    states_to_delete = session.query(State).filter(State.name.like('%a%')).all()
+    for state in states_to_delete:
+        session.delete(state)
+    session.commit()
+
+    session.close()
+
