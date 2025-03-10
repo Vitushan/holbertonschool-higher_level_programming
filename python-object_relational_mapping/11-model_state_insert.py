@@ -10,7 +10,8 @@ from model_state import Base, State
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: ./11-model_state_insert.py <mysql username> <mysql password> <database name>")
+        print("Usage: ./11-model_state_insert.py <mysql username>\
+              <mysql password> <database name>")
         sys.exit(1)
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
