@@ -1,15 +1,25 @@
 #!/usr/bin/python3
-"""Class definition of a State and an instance."""
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+"""Script for display  the first object State on the database."""
 
-Base = declarative_base()
+import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+
+if __name__ == "__main__":
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    first_state = session.query(State).order_by(State.id).first()
 
 
-class State(Base):
-    """Class that displays state in the database."""
+    if first_state:
+        print("{}: {}".format(first_state.id, first_state.name))
+    else:
+        print("Nothing")
 
-    __tablename__ = "states"
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    session.close()
