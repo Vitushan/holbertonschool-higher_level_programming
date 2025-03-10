@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 script lists all states with a name
-starting by 'N' from the database hbtn_0e_0_usa.
+starting by 'N' from the database
 """
 
 import MySQLdb
