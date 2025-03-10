@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-"""Class definition of a State and an instance."""
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+"""Module that contains the class definition of a City"""
 
-Base = declarative_base()
+from sqlalchemy import Column, Integer, String, ForeignKey
+from model_state import Base
 
-
-class State(Base):
-    """Class that displays state in the database."""
-
-    __tablename__ = "states"
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+class City(Base):
+    """City class that inherits from Base"""
+    __tablename__ = 'cities'
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)

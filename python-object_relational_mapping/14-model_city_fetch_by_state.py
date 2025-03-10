@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""
-model_city fetch by states
-"""
+"""Script that prints all City objects from the database hbtn_0e_14_usa"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import Base, State
 from model_city import City
 
 if __name__ == "__main__":
@@ -15,8 +14,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    cities = session.query(City, State).join(State).order_by(City.id).all()
-    for city, state in cities:
+    results = session.query(State, City).filter(State.id == City.state_id)\
+                     .order_by(City.id).all()
+    for state, city in results:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     session.close()
