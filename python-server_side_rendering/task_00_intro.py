@@ -25,3 +25,12 @@ def generate_invitations(template, attendees):
         return
     
     placeholders = ["name", "event_title", "even_date", "event_location"]
+
+    for index, attendee in enumerate(attendees, start=1):
+        invitation = template
+
+        for key in placeholders:
+            value = attendee.get(key)
+            if value is None:
+                value = "N/A"
+
