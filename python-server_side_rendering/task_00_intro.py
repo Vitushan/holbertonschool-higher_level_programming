@@ -11,4 +11,3 @@ def generate_invitations(template, attendees):
         return
     if not isinstance(attendees, list):
         print("Error: attendees must be a list of dictionaries")
-        return
