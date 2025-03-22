@@ -47,7 +47,7 @@ def generate_invitations(template, attendees):
         except Exception as e:
             print(f"Error when writing on file {output_filename}:{e}")
 
-    if __name__ == "__main__":
+    
         try:
             with open('template.txt', 'r') as file:
                 template_content = file.read()
@@ -61,4 +61,5 @@ def generate_invitations(template, attendees):
             {"name": "Charlie", "event_title": "AI Summit", "event_date": None, "event_location": "Boston"}
         ]
 
+    if __name__ == "__main__":
         generate_invitations(template_content, attendees)
