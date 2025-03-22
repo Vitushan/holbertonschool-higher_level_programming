@@ -24,7 +24,7 @@ def generate_invitations(template, attendees):
         print("No data provided, no output files generated")
         return
     
-    placeholders = ["name", "event_title", "even_date", "event_location"]
+    placeholders = ["name", "event_title", "event_date", "event_location"]
 
     for index, attendee in enumerate(attendees, start=1):
         invitation = template
