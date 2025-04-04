@@ -4,7 +4,7 @@ def create_database():
     conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
     
-    # Drop table if it exists to avoid duplicate entries when script is run multiple times
+
     cursor.execute('DROP TABLE IF EXISTS Products')
     
     cursor.execute('''
