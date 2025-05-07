@@ -1,2 +1,2 @@
-for lower in range(97, 127):
-    print(lower, end="")
+for lower in range(97, 123):
+    print(chr(lower), end="")
