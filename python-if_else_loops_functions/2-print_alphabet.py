@@ -1,2 +1,2 @@
-def lower():
-    return 97, 122
+for lower in range:
+    chr(97, 127)
