@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
-def print_list_integer(my_list=[]):
-    for i in my_list:
-        print("{:d}".format(i))
+def replace_in_list(my_list, idx, element):
+    if idx < 0 or idx >= len(my_list):
+        return my_list
+    my_list[idx] += element
+    return my_list
