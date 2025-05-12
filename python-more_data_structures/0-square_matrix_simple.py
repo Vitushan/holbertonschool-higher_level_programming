@@ -1,5 +1,8 @@
-#!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    if matrix == len(matrix):
-        new_matrix += matrix
+    new_matrix = []
+    for line in matrix:
+        new_line = []
+        for value in line:
+            new_line.append(value ** 2)
+        new_matrix.append(new_line)
     return new_matrix
