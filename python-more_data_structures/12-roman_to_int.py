@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or roman_string is None:
+        print("Error: is empty or not a string.")
         return 0
 
     roman_number = {
@@ -16,7 +17,12 @@ def roman_to_int(roman_string):
     total = 0
 
     for i in range(len(roman_string)):
-        current_value = roman_number[roman_string[i]]
+        current_value = roman_number.get(roman_string[i])
+
+        if current_value is None:
+            print(f"Error: {roman_string[i]} is not a valid Roman number.")
+            return 0
+
         if i + 1 < len(roman_string):
             next_value = roman_number[roman_string[i + 1]]
             if current_value < next_value:
@@ -26,3 +32,7 @@ def roman_to_int(roman_string):
         else:
             total += current_value
     return total
+
+if __name__ == "__main__":
+    romane_str = input("\tEnter a Roman Number: ")
+    print(f"Roman Number: {romane_str} || Arabic Number: {roman_to_int(romane_str)}")
