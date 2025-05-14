@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 def text_indentation(text):
-    """
-    Prints a text with 2 new lines after each '.', '?'
-    and ':'
-    """
+    """Prints a text with 2 new lines after each '.', '?', and ':'"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    line = ""
+    current = ""
     for char in text:
+        current += char
         if char in ".:?":
-            line += char
-            print(line.strip())
+            print(current.strip())
             print()
-            line=  ""
-        else:
-            line += char
-    if line.strip():
-        print(line.strip(), end="")
+            current = ""
+    if current.strip():
+        print(current.strip(), end="")
