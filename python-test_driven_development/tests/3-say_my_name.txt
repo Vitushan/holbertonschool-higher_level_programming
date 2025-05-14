@@ -1,0 +1,15 @@
+say_my_name("John", "Doe")
+John Doe
+
+say_my_name("Jean")
+Jean
+
+say_my_name(12, "Doe")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+say_my_name("Beans", 2.45)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
