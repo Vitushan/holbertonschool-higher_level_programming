@@ -1,8 +1,8 @@
->>> add_integer(2, 3)
-5
+>>> add_integer(1, 2)
+3
 >>> add_integer(100, -2)
 98
 >>> add_integer(2)
 100
-add_integer(2.5, 2.5)
-4
+add_integer(100.3, -2)
+98
