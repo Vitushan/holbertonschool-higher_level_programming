@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def add_integer(a, b=98):
     """
     args: a and b must be integers or floats,
