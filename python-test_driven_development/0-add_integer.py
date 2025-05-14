@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-
 def add_integer(a, b=98):
     """
-    Args: a and b must be integers or floats,
-    Raise: otherwise raise a TypeError exception with
+    args: a and b must be integers or floats,
+    raise: otherwise raise a TypeError exception with
     the message a must be an integer
     or b must be an integer
     a and b must be first casted to integers if they are float
