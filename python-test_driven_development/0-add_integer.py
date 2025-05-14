@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+add two integers or float with casting to integers
+"""
 def add_integer(a, b=98):
     """
     args: a and b must be integers or floats,
