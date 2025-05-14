@@ -1,0 +1,7 @@
+>>> print_square(4)
+####
+####
+####
+>>> print_square(2)
+##
+##
