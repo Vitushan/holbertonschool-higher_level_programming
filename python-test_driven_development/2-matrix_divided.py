@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+this a shebang for interpreting python3
+"""
+
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by div.
