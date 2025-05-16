@@ -2,10 +2,22 @@
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by div.
-    Matrix must be a list of lists of ints/floats.
-    Each row must be the same size.
-    div must be a number and not zero.
-    Returns: a new matrix with results rounded to 2 decimals.
+
+    >>> matrix_divided([[1, 2], [3, 4]], 1)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[2, 4], [6, 8]], 2)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1, 2], [3, "a"]], 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
     """
     if (not isinstance(matrix, list) or
         not all(isinstance(row, list)
