@@ -8,7 +8,7 @@ if not, raises an error
 
 def add_integer(a, b=98):
     """
-add two values
+    add two values
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
