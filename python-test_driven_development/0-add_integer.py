@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 """
-this a shebang for interpreting python3
+This module is for add two numbers
+either float or int
+if not, raises an error
 """
 
 
 def add_integer(a, b=98):
     """
-    args: a and b must be integers or floats,
-    raise: otherwise raise a TypeError exception with
-    the message a must be an integer
-    or b must be an integer
-    a and b must be first casted to integers if they are float
-    Returns: an integer: the addition of a and b
+add two values
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+    if a != a:
+        raise ValueError("cannot convert float NaN to integer")
+    if b != b:
+        raise ValueError("cannot convert float NaN to integer")
     return int(a) + int(b)
