@@ -1,6 +1,13 @@
 #!/usr/bin/python3
 """
-this a shebang for interpreting python3
+This module provides a function to add two integers.
+
+It ensures that both arguments are integers or floats,
+casts floats to integers before addition,
+and raises appropriate errors for invalid inputs.
+
+The function is designed for educational purposes
+following the TDD (Test Driven Development) approach.
 """
 
 
