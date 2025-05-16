@@ -8,7 +8,6 @@ def add_integer(a, b=98):
     a and b must be first casted to integers if they are float
     Returns: an integer: the addition of a and b
     """
-    add_integer = __import__('0-add_integer').add_integer
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
