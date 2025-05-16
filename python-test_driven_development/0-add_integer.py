@@ -13,12 +13,10 @@ following the TDD (Test Driven Development) approach.
 
 def add_integer(a, b=98):
     """
-    args: a and b must be integers or floats,
-    raise: otherwise raise a TypeError exception with
-    the message a must be an integer
-    or b must be an integer
-    a and b must be first casted to integers if they are float
-    Returns: an integer: the addition of a and b
+    Adds two integers or floats.
+
+    Both arguments are casted to integers if they are floats.
+    Raises a TypeError if the arguments are not integers or floats.
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
