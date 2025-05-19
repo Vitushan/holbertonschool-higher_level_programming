@@ -47,4 +47,10 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
+
+    def __repr__(self):
+        return f"Rectangle ({self.__width}, {self.__height}"
+
+    def __del__(self):
+        print("Bye rectangle...")
