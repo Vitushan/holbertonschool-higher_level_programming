@@ -47,7 +47,6 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        #CODER ICI LA REST
 
     def __repr__(self):
         return f"Rectangle ({self.__width}, {self.__height}"
