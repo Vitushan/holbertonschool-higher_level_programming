@@ -28,4 +28,5 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            print(square)
+            for i in square:
+                print(i)
