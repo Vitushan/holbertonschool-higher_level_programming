@@ -28,4 +28,4 @@ class Square:
             print()
         else:
             for i in range(self.__size):
-                print("i * '#'")
+                print("{} * '#'".format(i))
