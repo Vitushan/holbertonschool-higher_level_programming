@@ -5,6 +5,9 @@ module shebang for interpreting python3
 
 
 class Square:
+    """
+    this is a square class print '#'
+    """
     def __init__(self, size=0):
         self.__size = size
 
