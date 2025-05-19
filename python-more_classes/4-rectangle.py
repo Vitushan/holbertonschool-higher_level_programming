@@ -51,3 +51,6 @@ class Rectangle:
         for i in range(self.__height):
             result += '#' * self.__width + '\n'
         return result[:-1]
+
+    def __repr__(self):
+        pass
