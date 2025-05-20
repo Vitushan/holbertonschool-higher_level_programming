@@ -5,6 +5,8 @@ this is a shebang for interpreting python3
 
 
 number_of_instances = 0
+
+
 class Rectangle:
     """
     this is a rectangle class
