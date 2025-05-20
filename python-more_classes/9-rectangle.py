@@ -47,7 +47,7 @@ class Rectangle:
     def __str__(self):
         if self.__height == 0 or self.__width == 0:
             return ""
-        result =""
+        result = ""
         for i in range(self.__height):
             result += self.print_symbol * self.__width + '\n'
             return result[:-1]
@@ -74,5 +74,5 @@ class Rectangle:
 
         @classmethod
         def square(cls, size=0):
-            return f"size: {cls.size}"
-
+            new_instance = ""
+            return f"size: {cls.Rectangle}"
