@@ -35,7 +35,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
-            raise TypeError(" height must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
@@ -52,7 +52,7 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        type(self).number_for_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
     def __str__(self):
