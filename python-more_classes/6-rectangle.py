@@ -3,7 +3,7 @@
 this is a shebang for interpreting python3
 """
 
-
+number_of_instances = 0
 class Rectangle:
     """
     this is a rectangle class
@@ -35,3 +35,25 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        return self.__width * self.__height
+
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width + self.__height) * 2
+
+    def __str__(self):
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        result = ""
+        for i in range(self.__height):
+            result += '#' * self.__width + '\n'
+            return result[:-1]
+
+    def __repr__(self):
+        return f"Rectangle {self.__width}, {self.__height}"
+
+    def __del__(self):
+        print("Bye rectangle...")
