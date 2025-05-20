@@ -74,5 +74,4 @@ class Rectangle:
 
         @classmethod
         def square(cls, size=0):
-            new_instance = ""
-            return f"size: {cls.Rectangle}"
+            return f"size: {size}"
