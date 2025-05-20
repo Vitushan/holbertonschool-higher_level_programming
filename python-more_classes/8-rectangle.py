@@ -11,7 +11,6 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = '#'
 
-
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -70,5 +69,5 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1 ==  rect_1.area() and rect_2 == rect_2.area():
+        if rect_1 == rect_1.area() and rect_2 == rect_2.area():
             return rect_1
