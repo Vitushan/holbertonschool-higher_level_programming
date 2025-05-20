@@ -52,12 +52,13 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        number_for_instances -= 1
+        type(self).number_for_instances -= 1
         print("Bye rectangle...")
 
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
+        return type(self).print_symbol
         result = ""
         for i in range(self.__height):
             result += self.__width * '#' + '\n'
