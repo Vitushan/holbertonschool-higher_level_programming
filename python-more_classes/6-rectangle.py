@@ -4,9 +4,9 @@ this is a shebang for interpreting python3
 """
 
 
-
-
 number_of_instances = 0
+
+
 class Rectangle:
     """
     this is a rectangle class
@@ -60,5 +60,5 @@ class Rectangle:
         return f"Rectangle ({self.__width}, {self.__height})"
 
     def __del__(self):
-        type (self).number_of_instances -= 1
+        self.number_of_instances -= 1
         print("Bye rectangle...")
