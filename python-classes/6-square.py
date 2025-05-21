@@ -36,7 +36,7 @@ class Square:
         for num in value:
             if not isinstance(num, int) or num < 0:
                 raise TypeError(
-                    "position must be a tuplE\
+                    "position must be a tuple\
                         of 2 positive integers")
         self.__position = value
 
