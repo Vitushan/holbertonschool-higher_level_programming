@@ -11,4 +11,4 @@ def lookup(obj):
     return: list of obj
     """
     if isinstance(obj, list):
-        return obj
+        return dir(obj)
