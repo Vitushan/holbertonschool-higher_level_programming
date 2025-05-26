@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-this is a module for interpreting python3
+Module that defines the lookup function.
 """
-
 
 def lookup(obj):
     """
-    this a class
+    Returns the list of available attributes and methods of an object.
     """
-    return obj
+    return dir(obj)
