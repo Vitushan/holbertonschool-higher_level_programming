@@ -6,6 +6,7 @@ this is a module for interpreting python3
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """
     this is a square class
