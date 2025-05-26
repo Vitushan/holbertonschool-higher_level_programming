@@ -9,4 +9,5 @@ class MyList(list):
     this is a list class
     """
     def print_sorted(self):
-        list.sort()
+        lists = list.sort()
+        print(lists)
