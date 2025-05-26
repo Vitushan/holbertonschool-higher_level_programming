@@ -8,4 +8,4 @@ def lookup(obj):
     """
     this a class
     """
-    return __dict__(obj)
+    return dict(obj)
