@@ -10,4 +10,5 @@ def lookup(obj):
     args: obj
     return: list of obj
     """
-    return obj
+    if isinstance(obj, list):
+        return obj
