@@ -8,5 +8,4 @@ def lookup(obj):
     """
     this a class
     """
-    if isinstance(obj, list):
-        return obj
+    return dir(obj)
