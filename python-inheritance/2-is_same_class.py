@@ -4,6 +4,7 @@ Module that defines True is the object is instance
 """
 
 
+
 def is_same_class(obj, a_class):
     """
     Is same class
