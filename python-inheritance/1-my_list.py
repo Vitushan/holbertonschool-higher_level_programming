@@ -9,5 +9,5 @@ class MyList(list):
     this is a list class sorted
     """
     def print_sorted(self):
-        if isinstance(list, int):
+        if isinstance(list, list):
             print(sorted(self))
