@@ -8,4 +8,5 @@ def lookup(obj):
     """
     this a class
     """
-    pass
+    if not isinstance(obj, list):
+        return obj
