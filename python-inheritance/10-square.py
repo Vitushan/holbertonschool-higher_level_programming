@@ -12,7 +12,7 @@ class Square:
     """
     def __init__(self, size):
         self.__size = size
-        self.integer_validator("size", self.__size)
+        self.integer_validator("size", size)
 
     def area(self):
         self.__width * self.__height
