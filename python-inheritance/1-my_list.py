@@ -13,4 +13,5 @@ class MyList(list):
         Prints the list in ascending sorted order (without modifying the original list).
         Assumes all elements are integers.
         """
-        print(sorted(self))
+        for _ in range(list):
+            print(sorted(self))
