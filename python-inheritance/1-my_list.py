@@ -9,5 +9,4 @@ class MyList(list):
     this is a list class sorted
     """
     def print_sorted(self):
-        for _ in range(list):
             print(sorted(self))
