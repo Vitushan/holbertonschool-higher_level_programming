@@ -10,3 +10,6 @@ def lookup(obj):
     """
     if isinstance(obj, list):
         return obj
+    else:
+        for _ in range(obj):
+            print(obj)
