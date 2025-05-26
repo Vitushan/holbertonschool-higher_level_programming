@@ -8,6 +8,6 @@ def inherits_from(obj, a_class):
     """
     this is a inheritance class
     """
-    if isinstance(obj, a_class):
+    if all(isinstance(obj, a_class)):
         return True
     return False
