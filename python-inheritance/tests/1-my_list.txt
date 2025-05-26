@@ -1,3 +1,4 @@
+$ cat 1-main.py
 #!/usr/bin/python3
 MyList = __import__('1-my_list').MyList
 
@@ -11,6 +12,7 @@ print(my_list)
 my_list.print_sorted()
 print(my_list)
 
+$ ./1-main.py
 [1, 4, 2, 3, 5]
 [1, 2, 3, 4, 5]
 [1, 4, 2, 3, 5]
