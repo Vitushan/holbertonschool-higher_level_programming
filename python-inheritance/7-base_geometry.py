@@ -9,14 +9,15 @@ class BaseGeometry:
     This is a geometry Base class
     """
     def area(self):
+        """
+        this is a area
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
         validate that value is a positive integer
         """
-        self.name = name
-        self.value = value
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
