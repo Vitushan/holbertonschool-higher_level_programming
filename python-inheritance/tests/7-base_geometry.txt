@@ -1,4 +1,3 @@
-# Test of BaseGeometry.integer_validator
 >>> bg = __import__('7-base_geometry').BaseGeometry()
 >>> bg.integer_validator("width", 10)
 >>> bg.integer_validator("width", -5)
