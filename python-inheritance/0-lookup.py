@@ -12,4 +12,4 @@ def lookup(obj):
         return  dir(obj)
     else:
         for _ in range(obj):
-            print(obj)
+            return dir(obj)
