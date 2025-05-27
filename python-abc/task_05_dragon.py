@@ -20,3 +20,9 @@ class FlyMixin:
 class Dragon(SwimMixin, FlyMixin):
     def roar(self):
         print("The dragon roars!")
+
+if __name__ == '__main__"':
+    draco = Dragon()
+    draco.swim()
+    draco.fly()
+    draco.roar()
