@@ -58,3 +58,5 @@ if __name__ == '__main__':
     shape_info(Rectangle)
     c = Circle(4)
     r = Rectangle(4, 5)
+    print(r)
+    print(c)
