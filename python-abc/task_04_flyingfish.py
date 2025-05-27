@@ -25,6 +25,7 @@ class Bird:
     def habitat(self):
         print("The bird lives in the sky")
 
+
 class FlyingFish(Fish, Bird):
     """
     this is a multiple inheritance class
