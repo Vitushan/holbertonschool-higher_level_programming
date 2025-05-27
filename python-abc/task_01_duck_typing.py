@@ -5,6 +5,7 @@ This is a module for interpreting python3
 from abc import ABC, abstractmethod
 from math import *
 
+
 class Shape(ABC):
     """
     this is a shape class with ABC inheritance
@@ -16,6 +17,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
+
 
 class Circle(Shape):
     """
@@ -30,6 +32,7 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * self.radius * pi
 
+
 class Rectangle(Shape):
     """
     this is a rectangle class
@@ -43,5 +46,6 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return (self.width + self.height) * 2
+
 
 if __name__ == '__main__':
