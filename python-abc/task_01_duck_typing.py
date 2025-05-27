@@ -3,7 +3,7 @@
 This is a module for interpreting python3
 """
 from abc import ABC, abstractmethod
-from math import pi
+from math import *
 
 
 class Shape(ABC):
