@@ -45,3 +45,5 @@ if __name__ == '__main__':
     flying_fish.fly()
     flying_fish.swim()
     flying_fish.habitat()
+
+    print(FlyingFish.mro())
