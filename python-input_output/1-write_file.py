@@ -8,6 +8,5 @@ def write_file(filename="", text=""):
     """
     write file with encoding utf8
     """
-    with open(filename, 'r', encoding='utf-8') as f:
-        count += filename
-        return filename
+    with open(filename, 'w', encoding='utf-8') as f:
+        return f.write()
