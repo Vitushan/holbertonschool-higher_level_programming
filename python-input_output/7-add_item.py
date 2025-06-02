@@ -14,5 +14,6 @@ load_from_json_file = __import__('6-load_from_json_file').load_to_json_file
 
 file = 'add_item.json'
 with open(file, 'w', encoding='utf-8') as f:
-    f.write("[]")
-    print(file)
+    try:
+        print(file)
+    print('[]')
