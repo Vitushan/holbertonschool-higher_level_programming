@@ -13,4 +13,6 @@ def from_json_string(my_str):
      (Python data structure)
      represented by a JSON string
     """
-    return json.loads(my_str)
+    with open(my_str, 'w', encoding='utf-8') as f:
+        from_json_string(my_str)
+
