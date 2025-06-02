@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+this is a module for interpreting python3
+"""
 
 def read_file(filename=""):
     """
@@ -8,3 +10,4 @@ def read_file(filename=""):
     with open(filename, encoding="utf-8") as f:
         read_data = f.read()
         print(read_data)
+        f.closed
