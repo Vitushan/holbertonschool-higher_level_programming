@@ -14,5 +14,4 @@ def from_json_string(my_str):
      represented by a JSON string
     """
     with open(my_str, 'w', encoding='utf-8') as f:
-        from_json_string(my_str)
-
+        return json.loads(my_str)
