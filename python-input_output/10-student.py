@@ -15,4 +15,4 @@ class Student:
 
     def to_json(self, attrs=None):
         if all(isinstance(attrs, list)):
-            self.__dict__
+            return self.__dict__
