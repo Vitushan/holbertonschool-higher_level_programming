@@ -20,8 +20,8 @@ class CustomObject:
         """
         this is a method for print elements
         """
-        print(f"{self.name}")
-        print(f"{self.age}")
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
         print(f"{self.is_student}")
 
     def serialize(self, filename):
