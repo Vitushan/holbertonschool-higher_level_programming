@@ -19,10 +19,10 @@ class CustomObject:
         print(f"{self.is_student}")
 
     def serialize(self, filename):
-        with open(filename, 'wb', encoding='utf-8') as f:
-            pickle.dump(self, f)
+        with open(filename, 'wb') as f:
+            pickle.dump(f)
 
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, 'rb', encoding='utf-8') as f:
+        with open(filename, 'rb') as f:
             return pickle.load(f)
