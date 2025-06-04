@@ -1,18 +1,23 @@
 #!/usr/bin/python3
-
-import sys
-
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-
-filename = 'add_item.json'
+"""
+this is a module for interpreting python3
+"""
 
 
-try:
-    my_list = load_from_json_file(filename)
-except Exception:
-    my_list = []
+class Student:
+    """
+    this is a student class
+    """
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-my_list += sys.argv[1:]
-
-save_to_json_file(my_list, filename)
+    def to_json(self, attrs=None):
+        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
+            dictionary = {}
+            for key in attrs:
+                if hasattr(self, key):
+                    dictionary[key] = getattr(self, key)
+            return dictionary
+        return self.__dict__

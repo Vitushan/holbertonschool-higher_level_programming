@@ -15,4 +15,9 @@ class Student:
 
     def to_json(self, attrs=None):
         if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return self.__dict__
+            dictionary = {}
+            for key in attrs:
+                if hasattr(self, key):
+                    dictionary[key] = getattr(self, key)    
+                    return dictionary
+                return self.__dict__                
