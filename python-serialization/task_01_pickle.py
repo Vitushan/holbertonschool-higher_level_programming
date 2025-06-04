@@ -17,3 +17,12 @@ class CustomObject:
         print(f"{self.name}")
         print(f"{self.age}")
         print(f"{self.is_student}")
+
+    def serialize(self, filename):
+        with open(filename, 'rb', encoding='utf-8') as f:
+            pickle.dump(f)
+
+    @classmethod
+    def deserialize(cls, filename):
+        with open(filename, 'wb', encoding='utf-8') as f:
+            pickle.load(f)
