@@ -4,7 +4,7 @@ this is a module for interpreting python3
 """
 
 
-import pickle, json
+import json
 
 def serialize_and_save_to_file(data, filename):
     with open(filename, 'w', encoding='utf-8') as f:
