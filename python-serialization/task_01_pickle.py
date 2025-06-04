@@ -28,13 +28,18 @@ class CustomObject:
         """
         this is a method for serializing filename
         """
-        with open(filename, 'wb') as f:
-            pickle.dump(self, f)
-
+        try:
+            with open(filename, 'wb') as f:
+                pickle.dump(self, f)
+        except Exception:
+            return None
     @classmethod
     def deserialize(cls, filename):
         """
         this is a class method for deserializing filename
         """
-        with open(filename, 'rb') as f:
-            return pickle.load(f)
+        try:
+            with open(filename, 'rb') as f:
+                return pickle.load(f)
+        except Exception:
+            return None
