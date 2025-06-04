@@ -26,7 +26,7 @@ class CustomObject:
 
     def serialize(self, filename):
         """
-        this is a method for serializing
+        this is a method for serializing filename
         """
         with open(filename, 'wb') as f:
             pickle.dump(self, f)
@@ -34,7 +34,7 @@ class CustomObject:
     @classmethod
     def deserialize(cls, filename):
         """
-        this is a class method for deserializing
+        this is a class method for deserializing filename
         """
         with open(filename, 'rb') as f:
             return pickle.load(f)
