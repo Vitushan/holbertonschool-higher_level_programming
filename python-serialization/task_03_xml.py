@@ -11,8 +11,9 @@ def serialize_to_xml(dictionary, filename):
     """
     serialize a dictionary to xml and save inside filename
     """
-    data = ET.parse(data.xml)
+    data = ET.parse(filename)
     data = data.getroot()
 
     for child in data:
         print(child.tag, child.attrib)
+        return dictionary
