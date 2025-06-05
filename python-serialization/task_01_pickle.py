@@ -33,6 +33,7 @@ class CustomObject:
                 pickle.dump(self, f)
         except Exception:
             return None
+
     @classmethod
     def deserialize(cls, filename):
         """
