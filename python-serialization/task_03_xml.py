@@ -11,6 +11,5 @@ def serialize_to_xml(dictionary, filename):
     """
     serialize a dictionary to xml and save inside filename
     """
-    root = ET.fromstring(filename)
-    root.items()
-    return dictionary
+    root = ET.Element('data')
+    tree.write(filename, encoding="utf-8", xml_declaration=True)
