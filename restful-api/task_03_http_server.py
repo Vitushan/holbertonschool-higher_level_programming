@@ -16,6 +16,9 @@ class Myhandler(BaseHTTPRequestHandler):
     this is a subclass for get
     """
     def do_GET(self):
+        """
+        method do_get
+        """
         if self.path == '/':
             self.send_response(200, 'ok')
             self.send_header("Content-Type", "text/plain")
