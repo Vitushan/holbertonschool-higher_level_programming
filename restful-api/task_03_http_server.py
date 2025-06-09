@@ -41,7 +41,6 @@ class Myhandler(BaseHTTPRequestHandler):
             self.send_error(404, 'Endpoint not found')
 
 
-
 with HTTPServer(("", PORT), Myhandler) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
