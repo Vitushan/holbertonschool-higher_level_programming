@@ -8,7 +8,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 
-PORT = 8000
 
 
 class Myhandler(BaseHTTPRequestHandler):
@@ -38,10 +37,13 @@ class Myhandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"OK")
         else:
-            self.send_error(404, 'Endpoint not found')
+            self.send_response(404)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(f"'error': 'Endpoint not found'")
 
 
-if __name__ == '__main__':
-    server = HTTPServer(('', PORT), MyHandler)
-    print(f"serving at port {PORT}")
-    server.serve_forever()
+PORT = 8000
+with HTTPServer(("", PORT), Myhandler) as httpd:
+    print("serving at port", PORT)
+    httpd.serve_forever()
