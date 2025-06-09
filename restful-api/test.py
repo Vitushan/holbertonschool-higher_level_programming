@@ -33,7 +33,8 @@ def fetch_and_save_posts():
             write = csv.DictWriter(f, fieldnames=fieldname)
             write.writeheader()
             for post in posts:
-                write.writerow({'id': post['id'],
+                write.writerow({
+                    'id': post['id'],
                     'title': post['title'],
                     'body': post['body']
                 })
