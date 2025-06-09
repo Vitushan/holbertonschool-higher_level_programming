@@ -4,9 +4,8 @@ this is a module for interpreting python3
 """
 
 
-from http.server import BaseHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-import socketserver
 
 
 PORT = 8000
@@ -38,9 +37,7 @@ class Myhandler(BaseHTTPRequestHandler):
             self.end_headers()
 
 
-PORT = 8080
-Handler = http.server.SimpleHTTPRequestHandler
 
-with socketserver.TCPServer(("", PORT), Myhandler) as httpd:
+with HTTPServer(("", PORT), Myhandler) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
