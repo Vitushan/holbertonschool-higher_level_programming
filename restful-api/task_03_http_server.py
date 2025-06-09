@@ -20,7 +20,7 @@ class Myhandler(BaseHTTPRequestHandler):
         method do_get
         """
         if self.path == '/':
-            self.send_response(200, 'ok')
+            self.send_response(200)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
