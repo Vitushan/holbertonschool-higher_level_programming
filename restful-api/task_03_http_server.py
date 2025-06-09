@@ -33,8 +33,6 @@ class Myhandler(BaseHTTPRequestHandler):
             self.wfile.write(b"OK")
         else:
             self.send_error(404, 'Endpoint not found')
-            self.send_header("Content-Type", "text/plain")
-            self.end_headers()
 
 
 
