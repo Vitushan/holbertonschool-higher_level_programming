@@ -12,6 +12,9 @@ PORT = 8000
 
 
 class Myhandler(BaseHTTPRequestHandler):
+    """
+    this is a subclass for get
+    """
     def do_GET(self):
         if self.path == '/':
             self.send_response(200, 'ok')
