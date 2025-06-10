@@ -8,8 +8,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 
-
-
 class Myhandler(BaseHTTPRequestHandler):
     """
     this is a subclass for get
@@ -41,16 +39,18 @@ class Myhandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            info = {"version": "1.0", "description": "A simple API built with http.server"}
+            info = {
+                "version": "1.0", "description":
+                "A simple API built with http.server"
+                }
             self.wfile.write(json.dumps(info).encode('utf-8'))
 
         else:
             self.send_response(404)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            error = {"error": "404 Not Found"}
+            error = {"error": "Endpoint not found"}
             self.wfile.write(json.dumps(error).encode('utf-8'))
-        
 
 
 PORT = 8000
