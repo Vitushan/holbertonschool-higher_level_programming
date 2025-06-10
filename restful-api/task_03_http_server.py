@@ -40,7 +40,8 @@ class Myhandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(json.loads(data).encode('utf-8'))
+            error = {'error': '404 Not Found'}
+            self.wfile.write(json.loads(error).encode('utf-8'))
         
 
 
