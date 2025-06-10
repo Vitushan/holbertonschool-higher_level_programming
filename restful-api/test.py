@@ -5,38 +5,45 @@ this is a module for interpreting python3
 
 
 
-import requests, csv
-
-def fetch_and_print_posts():
-    """
-    fetches all post from JSONPlaceholder.
-    """
-    response = requests.get('https://jsonplaceholder.typicode.com/posts')
-    print(f"Status code: {response.status_code}")
-
-    if response.status_code == 200:
-        posts = response.json()
-        for post in posts:
-            print(post['title'])
-        
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import json
 
 
-def fetch_and_save_posts():
-    response = requests.get('https://jsonplaceholder.typicode.com/posts')
-    if response.status_code == 200:
-        posts = response.json()
-        for post in posts:
-            print(post['id'], post['title'], post['body'])
+class Myhandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"hello, this is a simple API!")
 
-        with open(posts.csv, 'w', encoding='utf-8') as f:
-            fieldname = ['id', 'title', 'body']
-            write = csv.DictWriter(f, fieldnames=fieldname)
-            write.writeheader()
-            for post in posts:
-                write.writerow({
-                    'id': post['id'],
-                    'title': post['title'],
-                    'body': post['body']
-                })
-fetch_and_print_posts()
-fetch_and_save_posts()
+        elif self.path == '/data':
+            data = {"name": "John", "age": 30, "city": "New York"}
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(json.dumps(data).encode('utf-8'))
+
+        elif self.path == '/status':
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"OK")
+
+        elif self.path == '/info':
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            info = {"version": "1.0", "description": "A simple API built with http.server"}
+            self.wfile.write(json.dumps(info).encode('utf-8'))
+
+        else:
+            self.send_response(404)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
+
+PORT = 800
+with HTTPServer(("", PORT), Myhandler) as httpd:
+    print("serving at port", PORT)
+    httpd.serve_forever()
