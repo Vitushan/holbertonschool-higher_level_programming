@@ -40,7 +40,7 @@ class Myhandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(f"'error': 'Endpoint not found'")
+            self.wfile.write(b"'error': 'Endpoint not found'")
 
 
 PORT = 8000
