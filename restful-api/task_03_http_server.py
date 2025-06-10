@@ -3,10 +3,8 @@
 this is a module for interpreting python3
 """
 
-
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-
 
 class Myhandler(BaseHTTPRequestHandler):
     """
@@ -39,19 +37,14 @@ class Myhandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            info = {
-                "version": "1.0", "description":
-                "A simple API built with http.server"
-                }
+            info = {"version": "1.0", "description": "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode('utf-8'))
 
         else:
             self.send_response(404)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Type", "text/plain")  # <-- texte brut pour l'erreur
             self.end_headers()
-            error = {"error": "Endpoint not found"}
-            self.wfile.write(json.dumps(error).encode('utf-8'))
-
+            self.wfile.write(b"Endpoint not found")
 
 PORT = 8000
 with HTTPServer(("", PORT), Myhandler) as httpd:
