@@ -39,7 +39,7 @@ class Myhandler(BaseHTTPRequestHandler):
 
         elif self.path == '/info':
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
             info = {"version": "1.0", "description": "A simple API built with http.server"}
             self.wfile.write(json.dumps(info).encode('utf-8'))
