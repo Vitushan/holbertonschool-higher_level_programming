@@ -78,3 +78,23 @@ def admin_only():
     if users and users.get('role') == "admin":
         return "Admin Access: Granted"
     return jsonify({"error": "Admin access required"}), 403
+
+@jwt.unauthorized_loader
+def unauthorized_callback(err):
+    return jsonify({"error": "Missing or invalid token"}), 401
+
+@jwt.invalid_token_loader
+def invalid_token_callback(err):
+    return jsonify({"error": "Invalid token"}), 401
+
+@jwt.expired_token_loader
+def expired_token_callback():
+    return jsonify({"error": "Token has expired"}), 401
+
+@jwt.revoked_token_loader
+def revoked_token_callback():
+    return jsonify({"error": "Token has been revoked"}), 401
+
+@jwt.needs_fresh_token_loader
+def frsh_token_required_callback():
+    return jsonify({"error": "Fresh token required"}), 401
