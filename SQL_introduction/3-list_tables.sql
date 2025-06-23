@@ -1,4 +1,4 @@
 -- list TABLE mysql
 
 
-SHOW TABLES `mysql`;
+SHOW TABLES;
