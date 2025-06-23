@@ -1,6 +1,20 @@
 #!/usr/bin/python3
 
 
-import mysql.connector
+import mysql.connector as MC
 
-SHOW DATABASES;
+config = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': '',
+}
+
+try:
+    conn = MC.connect(**config)
+    cursor = conn.cursor()
+    cursor.execute('SHOW DATABASES;')
+
+    cursor.close()
+    conn.close()
+except MC.Error as err:
+    print(f"Error: {err}")
