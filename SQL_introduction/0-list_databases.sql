@@ -3,25 +3,24 @@
 This script connects to a MySQL server and lists all databases.
 """
 
-import mysql.connector as MC
+import mysql.connector
 
 
 config = {
     'host': 'localhost',
-    'user':'root',
+    'user': 'root',
     'password': 'Database'
 }
 
 try:
-    conn = MC.connect(**config)
+    conn = mysql.connector.connect(**config)
     cursor = conn.cursor()
-    cursor.execute('SHOW DATABASES;')
 
-    print("All lists of databases")
+    cursor.execute("SHOW DATABASES;")
+
+    print("All lists of databases:")
     for (db,) in cursor:
-        print(db)
+    print(db)
 
     cursor.close()
     conn.close()
-except MC.Error as err:
-    print(f"Error: {err}")
