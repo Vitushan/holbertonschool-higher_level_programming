@@ -1,1 +1,3 @@
-conn.execute(SHOW DATABASES;)
+-- List all databases
+
+SHOW DATABASES;
