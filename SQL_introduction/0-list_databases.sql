@@ -4,9 +4,7 @@ This is a module for interpreting python3
 """
 
 
-import mysql.connector as MC
+import mysql.connector
 
 
-    conn = MC.connect(host = 'localhost', database = 'data', user = 'root', password= '')
-    cursor = conn.cursor()
- 
+SHOW DATABASES *
