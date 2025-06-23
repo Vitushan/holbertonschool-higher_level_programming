@@ -1,24 +1,27 @@
 #!/usr/bin/python3
+"""
+This script connects to a MySQL server and lists all databases.
+"""
 
+import mysql.connector
 
-import mysql.connector as MC
+# Connexion au serveur MySQL
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password=""
+)
 
-config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '',
-}
+cursor = conn.cursor()
 
-try:
-    conn = MC.connect(**config)
-    cursor = conn.cursor()
-    cursor.execute('SHOW DATABASES;')
+# Envoi de la commande SQL SHOW DATABASES
+cursor.execute("SHOW DATABASES;")
 
-    print("All lists of Databases")
-    for (db,) in cursor:
-        print(db)
+# Affichage des résultats
+print("Databases on this MySQL server:")
+for db in cursor:
+    print(f"- {db[0]}")
 
-    cursor.close()
-    conn.close()
-except MC.Error as err:
-    print(f"Error: {err}")
+# Fermeture
+cursor.close()
+conn.close()
