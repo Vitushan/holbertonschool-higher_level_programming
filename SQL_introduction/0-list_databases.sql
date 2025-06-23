@@ -14,6 +14,9 @@ try:
     cursor = conn.cursor()
     cursor.execute('SHOW DATABASES;')
 
+    print("All lists of Databases")
+    for (db,) in cursor:
+    print(db)
     cursor.close()
     conn.close()
 except MC.Error as err:
