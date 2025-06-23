@@ -16,7 +16,8 @@ try:
 
     print("All lists of Databases")
     for (db,) in cursor:
-    print(db)
+        print(db)
+
     cursor.close()
     conn.close()
 except MC.Error as err:
