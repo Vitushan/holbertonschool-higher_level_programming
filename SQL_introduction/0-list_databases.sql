@@ -1,1 +1,1 @@
-SHOW DATABASES;
+conn.execute(SHOW DATABASES;)
