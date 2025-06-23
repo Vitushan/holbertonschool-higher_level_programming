@@ -1,4 +1,4 @@
 -- Display the number of records with id = 89.
 
 
-COUNT (id) FROM `first_table`;
+SELECT (id) FROM first_table;
