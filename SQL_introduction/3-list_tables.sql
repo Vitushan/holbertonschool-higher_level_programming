@@ -1,4 +1,4 @@
--- list TABLE
+-- list TABLE mysql
 
 
-SHOW TABLE `mysql`;
+SHOW TABLE *;
