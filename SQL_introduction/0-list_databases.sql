@@ -4,4 +4,4 @@ This is a module for interpreting python3
 """
 
 
-SHOW DATABASE *
+SHOW DATABASES *
