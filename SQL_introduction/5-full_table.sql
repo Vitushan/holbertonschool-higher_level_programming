@@ -1,4 +1,4 @@
 -- Prints the following description of the table
 
 
-DESC first_table FROM `hbtn_0c_0`;
+INSERT INTO first_table VALUES `hbtn_0c_0`;
