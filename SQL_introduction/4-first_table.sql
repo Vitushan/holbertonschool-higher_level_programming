@@ -2,6 +2,6 @@
 
 
 CREATE first_table (
-    id int,
+    id INT
     name VARCHAR(256)
 )
