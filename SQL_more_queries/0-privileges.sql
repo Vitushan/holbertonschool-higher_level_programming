@@ -1,5 +1,5 @@
 -- script that lists all privileges of the MySQL users user_0d_1 and user_0d_2
 
 
-GRANTS ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION
-GRANTS ALL PRIVILEGES ON *.* TO'user_0d_2'@'localhost' WITH GRANT OPTION
+GRANT PRIVILEGE ON database.table TO 'user_0d_1'@'localhost';
+GRANT PRIVILEGE ON database.table TO'user_0d_2'@'localhost';
