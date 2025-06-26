@@ -9,7 +9,6 @@ of hbtn_0e_0_usa where name matches the argument.
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
