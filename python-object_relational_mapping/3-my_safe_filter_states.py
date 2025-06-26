@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
 
-    cursor.execute(query, state_name_searched)
+    cursor.execute(query, (state_name_searched,))
 
     rows = cursor.fetchall()
     for row in rows:
