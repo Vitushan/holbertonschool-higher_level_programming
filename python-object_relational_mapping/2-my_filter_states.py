@@ -26,7 +26,7 @@ if __name__ == "__main__":
     query = ("SELECT * FROM states "
              "WHERE name = '{}' "
              "ORDER BY states.id ASC").format(
-                state_name_searched.replace("'", "''"))
+                state_name_searched)
     cursor.execute(query)
 
     rows = cursor.fetchall()
