@@ -32,9 +32,10 @@ if __name__ == "__main__":
 """
     cursor.execute(query, (state_name,))
 
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    city_names = []
+    for row in cursor.fetchall():
+        city_names.append(row[0])
 
+    print(", ".join(city_names))
     cursor.close()
     db.close()
