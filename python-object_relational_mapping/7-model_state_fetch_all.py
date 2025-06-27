@@ -9,7 +9,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+
 
 if __name__ == "__main__":
     username = sys.argv[1]
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
 
     engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}',
+        f"mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}",
         pool_pre_ping=True
     )
 
