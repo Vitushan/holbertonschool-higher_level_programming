@@ -27,7 +27,7 @@ if __name__ == "__main__":
         FROM cities
         JOIN states ON cities.state_id = states.id
         ORDER BY cities.id ASC
-    """
+        """
     cursor.execute(query)
 
     rows = cursor.fetchall()
