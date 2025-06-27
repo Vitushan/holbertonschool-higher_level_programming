@@ -20,7 +20,6 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=db_name,
-        state_name=state_name
     )
     cursor = db.cursor()
 
