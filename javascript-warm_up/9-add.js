@@ -4,6 +4,8 @@ function add(a, b) {
     return a + b
 }
 
+module.exports = { add };
+
 const { argv } = require('node:process');
 
 const a = parseInt(argv[2]);
