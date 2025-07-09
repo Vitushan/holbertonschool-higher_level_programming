@@ -1,8 +1,6 @@
 #!/usr/bin/node
 
 
-/*
-this is a javascript
-*/
+//comments
 const myVar = "JavaScript is amazing";
 console.log(myVar);
