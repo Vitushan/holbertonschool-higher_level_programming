@@ -1,7 +1,4 @@
-/*
-  Ceci est un commentaire
-  qui peut faire plusieurs lignes.
-*/
+//ceci cest sa
 
 
 const myVar = "JavaScript is amazing";
