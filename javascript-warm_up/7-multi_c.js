@@ -8,4 +8,3 @@ if (!isNaN(x)) {
 }else {
     console.log(x);
 }
-for (let xx of x) console.log(xx);
