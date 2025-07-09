@@ -2,4 +2,4 @@
 
 const { argv } = require('node:process');
 
-console.log(argv[1], argv[2]);
+console.log(argv[2], argv[3]);
