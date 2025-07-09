@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 
-if (args === 0) {
+if (argv === 0) {
     console.log("No argument");
-} else if(args === 1) {
+} else if(argv === 1) {
     console.log("Argument found");
 } else {
     console.log("arguments found");
