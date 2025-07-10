@@ -6,5 +6,6 @@ const x = Number(argv[2]);
 if (isNaN(x)) {
     console.log('Missing number of occurrences');
 }else {
-    console.log(x);
+    for(let i = 0; x < 5; i++);
+    console.log('C is fun');
 }
