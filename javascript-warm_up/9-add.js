@@ -5,6 +5,6 @@ function add(a, b) {
 }
 const { argv } = require('node:process');
 
-const a = parseInt(argv[2]);
-const b = parseInt(argv[3]);
+const a = Number(argv[2]);
+const b = Number(argv[3]);
 console.log(add(a, b));
