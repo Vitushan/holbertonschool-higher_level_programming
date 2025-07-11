@@ -1,10 +1,12 @@
 #!/usr/bin/node
 
-let x = 5, string = ""
-    for (let i = 1; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        string += "*";
-      }
-      string += "\n";
+const size = Number(process.argv[2]);
+
+if (isNan(size)) {
+    console.log('Missing size');
+}
+else {
+    for (let i = 0; i < size; i++) {
+        console.log(size);
     }
-    console.log(string);
+}
