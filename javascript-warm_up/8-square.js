@@ -7,6 +7,6 @@ if (isNan(size)) {
 }
 else {
     for (let i = 0; i < size; i++) {
-        console.log(size);
+        console.log(size).repeat();
     }
 }
