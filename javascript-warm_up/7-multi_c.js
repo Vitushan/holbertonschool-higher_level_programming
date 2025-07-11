@@ -3,7 +3,7 @@
 const { argv } = require('node:process')
 const x = parseInt(argv[2]);
 
-if (isNaN(x)) {
+if ((x) === undefined) {
     console.log('Missing number of occurrences');
 } else {
     for(let i = 0; i < x; i++) {
