@@ -1,3 +1,2 @@
-element = document.querySelector(h1);
-
-header.style.color = "#FF0000";
+element = document.querySelector('h1');
+element.style.color = "#FF0000";
