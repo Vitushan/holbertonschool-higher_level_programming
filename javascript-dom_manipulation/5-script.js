@@ -1,8 +1,8 @@
-const btn = document.getElementById('update_header');
+const new_btn = document.getElementById('update_header');
 
-btn.addEventListener('click', function() {
+new_btn.addEventListener('click', function() {
     const header = document.querySelector('header');
     if (header) {
-        header.textContent = "News Header ! ! ! "
+        header.textContent = "New Header ! ! ! "
     }
 });
