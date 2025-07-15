@@ -28,4 +28,4 @@ def generate_invitations(template, attendees):
         with open(f"output_{i}.txt", "w") as f:
             f.write(invitation)
 
-        i +=1
+        i += 1
