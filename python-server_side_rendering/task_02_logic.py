@@ -8,7 +8,7 @@ app = Flask(__name__)
 def items():
     with open('items.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
-    return render_template('items.html', items=data.get(['items']))
+    return render_template('items.html', items=data.get('items'))
 
 
 if __name__ == '__main__':
