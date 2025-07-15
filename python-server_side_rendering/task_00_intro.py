@@ -4,14 +4,19 @@
 def generate_invitations(template, attendees):
     if not isinstance(template, str):
         print("Invalid input: template must be a string.")
+        return
+
     if not isinstance(attendees, list):
         print('Invalid input: attendees must be a list of dictionaries.')
+        return
 
     if template.strip() == "":
         print("Template is empty, no output files generated.")
+        return
 
     if len(attendees) == 0:
         print("No data provided, no output files generated.")
+        return
 
     i = 1
     for attendee in attendees:
