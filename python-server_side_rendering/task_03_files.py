@@ -6,13 +6,12 @@ app = Flask(__name__)
 
 
 @app.route('/product_display')
-def product_display(force=False, silent=False):
-    with open('product_display', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-        return render_template('product_display.html', product_display=data.get('product_display'))
+def read_json():
+    with open('data.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
 
-    with open('product_display', 'r', encoding='utf-8'):
-        data = csv.dumps(f)
-        return render_template('product_display.html', product_display=data.get('product_display'))
-
+def read_csv():
+    with open('data.csv', 'r', encoding='utf-8'):
+        reader = csv.DictReader(f)
+        return reader
 
