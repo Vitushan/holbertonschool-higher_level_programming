@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 import csv
 
@@ -17,4 +17,12 @@ def read_csv():
 
 @app.route('/product_display')
 def product_display():
-    return render_template('product_display.html')
+    src = request.args.get('src')
+
+    if src == 'json':
+        return read_json()
+    elif src == 'csv':
+        return read_csv()
+    else:
+        return render_template('product_display.html', error="Wrong source"), 404
+ 
