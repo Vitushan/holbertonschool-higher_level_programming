@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 
 def read_json():
-    with open('data.json', 'r', encoding='utf-8') as f:
+    with open('products.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
 def read_csv():
-    with open('data.csv', 'r', encoding='utf-8') as f:
+    with open('products.csv', 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         return list(reader)
 
