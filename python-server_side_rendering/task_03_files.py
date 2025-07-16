@@ -11,24 +11,37 @@ def read_json():
 def read_csv():
     with open('products.csv', 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
-        return list(reader)
+        products = []
+        for row in reader:
+            try:
+                row['id'] = int(row['id'])
+                row['price'] = float(row['price'])
+            except ValueError:
+                continue
+            products.append(row)
+        return products
 
 @app.route('/products')
 def product_display():
     source = request.args.get('source')
     product_id = request.args.get('id')
 
+    if source not in ['json', 'csv']:
+        return render_template('product_display.html', error="Wrong source")
+    
     if source == 'json':
         data = read_json()
-    elif source == 'csv':
-        data = read_csv()
     else:
-        return render_template('product_display.html', error="Wrong source")
+        data = read_csv()
 
     products = data
 
     if product_id:
-        selected = [p for p in products if str(p.get('id')) == str(product_id)]
+        try:
+            product_id = int(product_id)
+            selected = [p for p in products if p.get('id') == product_id]
+        except ValueError:
+            return render_template('product_display.html', error="Invalid product ID")
         if not selected:
             return render_template('product_display.html', error="Product not found")
         products = selected
