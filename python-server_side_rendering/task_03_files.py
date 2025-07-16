@@ -27,7 +27,7 @@ def product_display():
     else:
         return render_template('product_display.html', error="Wrong source")
  
-    product = data
+    products = data
 
     if product_id:
         select_products = []
