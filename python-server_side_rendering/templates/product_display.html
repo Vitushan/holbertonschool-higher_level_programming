@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product List</title>
-</head>
-<body>
+
 
 {% if error %}
     <p>{{ error }}</p>
 {% elif products %}
-    <table border="1">
+    <table>
         <thead>
         <tr>
             <th>Name</th>
@@ -30,6 +24,5 @@
 {% else %}
     <p>No products to display.</p>
 {% endif %}
-
 </body>
 </html>
