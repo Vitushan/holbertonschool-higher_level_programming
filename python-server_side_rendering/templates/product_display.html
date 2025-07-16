@@ -1,4 +1,9 @@
-{% include 'header.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
 
 {% if error %}
     <p>{{ error }}</p>
@@ -12,14 +17,18 @@
             </tr>
         </thead>
         <tbody>
-            {% for product in products %}
+        {% for product in products %}
             <tr>
                 <td>{{ product["name"] }}</td>
                 <td>{{ product["category"] }}</td>
                 <td>{{ product["price"] }}</td>
             </tr>
-            {% endfor %}
+        {% endfor %}
         </tbody>
     </table>
+{% else %}
+    <p>No products</p>
 {% endif %}
-{% include 'footer.html' %}
+
+</body>
+</html>
