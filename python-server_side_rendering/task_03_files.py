@@ -15,7 +15,7 @@ def read_csv():
         return list(reader)
 
 
-@app.route('/product_display')
+@app.route('/products')
 def product_display():
     src = request.args.get('src')
     product_id = request.args.get('id')
