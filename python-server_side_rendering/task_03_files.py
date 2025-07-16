@@ -24,7 +24,7 @@ def product_display():
         data = read_csv()
     else:
         return render_template('product_display.html', error="Wrong source")
- 
+
     products = data
 
     if product_id:
