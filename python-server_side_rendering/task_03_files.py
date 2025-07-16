@@ -17,7 +17,7 @@ def read_csv():
 
 @app.route('/products')
 def product_display():
-    src = request.args.get('src')
+    source = request.args.get('source')
     product_id = request.args.get('id')
 
     if src == 'json':
