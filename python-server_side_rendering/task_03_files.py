@@ -21,12 +21,14 @@ def product_display():
     product_id = request.args.get('id')
 
     if src == 'json':
-        products = read_json()
+        data = read_json()
     elif src == 'csv':
-        products = read_csv()
+        data = read_csv()
     else:
         return render_template('product_display.html', error="Wrong source")
  
+    product = data
+
     if product_id:
         select_products = []
         for product in products:
