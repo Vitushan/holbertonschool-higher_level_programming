@@ -4,46 +4,41 @@ import csv
 
 app = Flask(__name__)
 
-def read_json():
-    with open('products.json', 'r', encoding='utf-8') as f:
-        return json.load(f)
+def read_json_file():
+    with open('products.json', 'r') as file:
+        return json.load(file)
 
-def read_csv():
-    with open('products.csv', 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        products = []
+def read_csv_file():
+    products = []
+    with open('products.csv', newline='') as file:
+        reader = csv.DictReader(file)
         for row in reader:
-            try:
-                row['id'] = int(row['id'])
-                row['price'] = float(row['price'])
-            except ValueError:
-                continue
-            products.append(row)
-        return products
+            products.append({
+                "id": int(row["id"]),
+                "name": row["name"],
+                "category": row["category"],
+                "price": float(row["price"])
+            })
+    return products
 
 @app.route('/products')
-def product_display():
+def products():
     source = request.args.get('source')
-    product_id = request.args.get('id')
+    product_id = request.args.get('id', type=int)
 
-    if source not in ['json', 'csv']:
-        return render_template('product_display.html', error="Wrong source")
-    
     if source == 'json':
-        data = read_json()
+        data = read_json_file()
+    elif source == 'csv':
+        data = read_csv_file()
     else:
-        data = read_csv()
+        return render_template('product_display.html', error='Wrong source')
 
-    products = data
+    if product_id is not None:
+        data = [product for product in data if product['id'] == product_id]
+        if not data:
+            return render_template('product_display.html', error='Product not found')
 
-    if product_id:
-        try:
-            product_id = int(product_id)
-            selected = [p for p in products if p.get('id') == product_id]
-        except ValueError:
-            return render_template('product_display.html', error="Invalid product ID")
-        if not selected:
-            return render_template('product_display.html', error="Product not found")
-        products = selected
+    return render_template('product_display.html', products=data)
 
-    return render_template('product_display.html', products=products)
+if __name__ == '__main__':
+    app.run(debug=True)
