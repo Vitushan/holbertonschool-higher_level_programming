@@ -20,9 +20,9 @@ def product_display():
     source = request.args.get('source')
     product_id = request.args.get('id')
 
-    if src == 'json':
+    if source == 'json':
         data = read_json()
-    elif src == 'csv':
+    elif source == 'csv':
         data = read_csv()
     else:
         return render_template('product_display.html', error="Wrong source")
