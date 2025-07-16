@@ -30,7 +30,7 @@ def generate_invitations(template, attendees):
         invitation = invitation.replace("{event_date}", event_date)
         invitation = invitation.replace("{event_location}", event_location)
 
-        with open(f"output_{i}.txt", "w") as f:
+        with open(f"output_{i}.txt", "w", encoding='utf-8') as f:
             f.write(invitation)
 
         i += 1
