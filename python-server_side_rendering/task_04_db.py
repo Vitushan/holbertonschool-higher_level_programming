@@ -6,21 +6,21 @@ app = Flask(__name__)
 
 def read_db():
     try:
-        connect = sqlite3.connect('products.de')
+        connect = sqlite3.connect('products.db')
         cursor = connect.cursor()
         cursor.execute("SELECT id, name, category, price FROM Products")
-        row = cursor.fetchall()
+        rows = cursor.fetchall()
     
-        product =  [{
+        products =  [{
             "id": row[0],
             "name": row[1],
             "category": row[2],
             "price": row[3]
         }
-        for row in row
-    ]
+        for row in rows]
+
         connect.close()
-        return product
+        return products
     except sqlite3.Error as e:
         print(f"Database error: {e}")
         return None
