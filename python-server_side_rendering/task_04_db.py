@@ -4,13 +4,14 @@ import sqlite3
 
 app = Flask(__name__)
 
+
 def read_db():
     try:
         connect = sqlite3.connect('products.db')
         cursor = connect.cursor()
         cursor.execute("SELECT id, name, category, price FROM Products")
         rows = cursor.fetchall()
-    
+
         products =  [{
             "id": row[0],
             "name": row[1],
@@ -24,7 +25,7 @@ def read_db():
     except sqlite3.Error as e:
         print(f"Database error: {e}")
         return None
-    
+
 
 @app.route('/products')
 def products():
@@ -41,6 +42,6 @@ def products():
         if not data:
             return render_template('product_display.html', error='Product not found')
         return render_template('product_display.html', products=data)
-    
+
 if __name__ == '__main__':
     app.run(debug=True)
