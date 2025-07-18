@@ -24,3 +24,23 @@ def read_db():
     except sqlite3.Error as e:
         print(f"Database error: {e}")
         return None
+    
+
+@app.route('/products')
+def products():
+    source = request.args.get('source')
+    product_id = request.args.get('id', type=int)
+
+    if source == 'sqlite3':
+        data = read_db()
+    else:
+        return render_template('product_display.html', error='Wrong source')
+
+    if product_id is not None:
+        data = [product for product in data if product['id'] == product_id]
+        if not data:
+            return render_template('product_display.html', error='Product not found')
+        return render_template('product_display.html', products=data)
+    
+if __name__ == '__main__':
+    app.run(debug=True)
