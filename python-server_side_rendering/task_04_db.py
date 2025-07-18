@@ -40,7 +40,7 @@ def products():
     if product_id is not None:
         data = [product for product in data if product['id'] == product_id]
         if not data:
-            return render_template('product_display.html', error='Product not found')
+            return render_template('product_display.html', error='Products not found')
         return render_template('product_display.html', products=data)
 
 if __name__ == '__main__':
