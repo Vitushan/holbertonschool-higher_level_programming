@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-import json
-import csv
 import sqlite3
 
 
@@ -11,5 +9,18 @@ def read_db():
         connect = sqlite3.connect('products.de')
         cursor = connect.cursor()
         cursor.execute("SELECT id, name, category, price FROM Products")
-        rows = cursor.fetchall()
+        row = cursor.fetchall()
+    
+        product =  [{
+            "id": row[0],
+            "name": row[1],
+            "category": row[2],
+            "price": row[3]
+        }
+        for row in row
+    ]
+        connect.close()
+        return product
     except sqlite3.Error as e:
+        print(f"Database error: {e}")
+        return None
