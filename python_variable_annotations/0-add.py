@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
 """
-This is a module for interpreting python3 s
+This module provides basic arithmetic operations for floating point numbers.
 """
 
 
-def add(a: float, b:float) -> float:
+def add(a: float, b: float) -> float:
     """
-    Add two floats and returns their sum.
-
-    Args:
-    a (float: First number)
-    b (float): Second number
-
-    Return float: Sums of a and b
+    Add two floating point numbers and return their sum as a float.
     """
     return a + b
